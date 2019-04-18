@@ -1,6 +1,12 @@
 import React from "react";
 import { Route, Switch } from "react-router-dom";
-import { HomePage, Studios, Synthesizers, Training } from "../pages";
+import {
+    HomePage,
+    Studios,
+    Synthesizers,
+    Training,
+    PageNotFound
+} from "../pages";
 
 import "./app.module.scss";
 
@@ -9,23 +15,27 @@ const App = () => {
     <Switch>
         <Route
             path="/"
-            component={HomePage}
+            component={ HomePage }
             exact
         />
 
         <Route
             path="/studios"
-            component={Studios}
+            component={ Studios }
         />
 
         <Route
             path="/synthesizers"
-            component={Synthesizers}
+            component={ Synthesizers }
         />
 
         <Route
             path="/training"
-            component={Training}
+            component={ Training }
+        />
+
+        <Route 
+            component={ PageNotFound } 
         />
     </Switch>
   );
