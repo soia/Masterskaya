@@ -11,6 +11,7 @@ import { InstrumentstoreServiceProvider } from './components/instrumentstore-ser
 
 import store from './store';
 import './i18n';
+import './components/app/app.module.scss';
 
 const DummyService = new DummyServices();
 

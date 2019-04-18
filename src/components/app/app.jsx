@@ -1,44 +1,18 @@
-import React from "react";
-import { Route, Switch } from "react-router-dom";
-import {
-    HomePage,
-    Studios,
-    Synthesizers,
-    Training,
-    PageNotFound
-} from "../pages";
+import React, { Fragment } from "react";
+
+import Router from "../../utils/router";
+import Header from "../layouts/header";
 
 import "./app.module.scss";
 
 const App = () => {
-  return (
-    <Switch>
-        <Route
-            path="/"
-            component={ HomePage }
-            exact
-        />
+    return (
+        <Fragment>
+            <Header />
 
-        <Route
-            path="/studios"
-            component={ Studios }
-        />
-
-        <Route
-            path="/synthesizers"
-            component={ Synthesizers }
-        />
-
-        <Route
-            path="/training"
-            component={ Training }
-        />
-
-        <Route 
-            component={ PageNotFound } 
-        />
-    </Switch>
-  );
+            <Router />
+        </Fragment>
+    );
 };
 
 export default App;
