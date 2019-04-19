@@ -1,0 +1,38 @@
+@import "../../assets/styles/variables";
+
+.footer {
+    display: flex;
+    align-items: center;
+    margin: 3.3vw 6.1vw;
+
+    &__contact {
+        font-size: 0.9vw;
+        font-weight: 500;
+        color: $greyColor;
+        font-family: $FuturaPT;
+        margin-right: 10.3vw;
+
+        &:hover {
+            color: $red;
+        }
+    }
+
+    &__socialLinks {
+        ul {
+            a {
+                font-size: 0.9vw;
+                font-weight: 500;
+                color: $greyColor;
+                font-family: $FuturaPT;
+
+                &:hover {
+                    color: $red;
+                }
+
+                &:not(:last-child) {
+                    margin-right: 2.5vw;
+                }
+            }
+        }
+    }
+}

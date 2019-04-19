@@ -5,5 +5,10 @@
         "training": "Обучение",
         "search": "Поиск",
         "login": "Вход"
+    },
+
+    "footer": {
+        "contact": "Контакты"
     }
+
 }

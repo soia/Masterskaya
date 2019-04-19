@@ -5,5 +5,10 @@
         "training": "Training",
         "search": "Search",
         "login": "Login"
+    },
+
+    "footer": {
+        "contact": "Contacts"
     }
+
 }

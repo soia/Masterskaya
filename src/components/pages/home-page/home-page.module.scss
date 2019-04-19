@@ -1,0 +1,58 @@
+@import "../../assets/styles/variables";
+
+.homepage {
+    display: flex;
+    margin-left: 21vw;
+
+    &__leftSide {
+        width: 40%;
+
+        img {
+            width: 23.2vw;
+            height: 24.8vw;
+        }
+    }
+
+    &__rightSide {
+        width: 60%;
+    }
+
+    &__hub {
+        display: flex;
+        margin-top: 4vw;
+        margin-bottom: 2.2vw;
+
+        img {
+            width: 2.9vw;
+            height: 3.4vw;
+        }
+
+        h1 {
+            font-family: $CoreSansG;
+            font-size: 3.4vw;
+            font-weight: 500;
+            color: $red;
+            margin-left: 0.5vw;
+        }
+    }
+
+    &__description {
+        font-family: $FuturaPT;
+        font-size: 0.9vw;
+        line-height: 1.2vw;
+        color: #000000;
+    }
+
+    &__socialLinks {
+        margin-top: 61px;
+
+        img {
+            width: 10.2vw;
+            height: 3vw;
+
+            &:first-child {
+                margin-right: 1.3vw;
+            }
+        }
+    }
+}

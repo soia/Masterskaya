@@ -15,11 +15,18 @@ const Header = () => {
     const { t, i18n } = useTranslation();
 
     const changeLanguage = lng => {
-      i18n.changeLanguage(lng);
+        i18n.changeLanguage(lng);
     };
+
+    const handleSubmit = (event) => {
+        event.preventDefault();
+        console.log('submit accsses');
+    };
+
     return (
         <header className={style.header}>
-            <Link to="/" className={style.header__logo} exact>
+
+            <Link to="/" className={style.header__logo}>
                 <img src={logo} alt="logo" />
                 <span>Masterskaya.</span>
             </Link>
@@ -31,19 +38,24 @@ const Header = () => {
                     <Link to="/training">{t("header.training")}</Link>
                 </ul>
             </nav>
+            
+            <form action="/search" onSubmit={handleSubmit}>
+                <div className={style.header__search}>
+                    <label htmlFor="headerSearch">
+                        <img src={search} alt="search" />
+                    </label>
+                    <input id="headerSearch" type="search" placeholder={t("header.search")} />
+                </div>
+            </form>
 
-            <div className={style.header__search}>
-                <img src={search} alt="search" />
-                <input type="search" placeholder={t("header.search")}/>
-            </div>
-
-            <Select className={style.header__select}  defaultValue="rus" onChange={changeLanguage}>
+            <Select className={style.header__select} defaultValue="rus" onChange={changeLanguage}>
                 <Option value="rus">Рус</Option>
                 <Option value="ukr">Укр</Option>
                 <Option value="Eng">Eng</Option>
             </Select>
 
             <button className={style.header__loginBtn}>{t("header.login")}</button>
+
         </header>
     );
 };

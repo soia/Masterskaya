@@ -3,6 +3,7 @@
 .header {
     display: flex;
     align-items: center;
+    justify-content: space-between;
     margin: 3.3vw 6.1vw;
 
     &__logo {
@@ -16,7 +17,7 @@
         }
     
         span {
-            font-size: 1vw;
+            font-size: 0.9vw;
             font-weight: 500;
             color: $greyColor;
             margin-left: 1vw;
@@ -29,7 +30,7 @@
         ul {
 
             a {
-                font-size: 1vw;
+                font-size: 0.9vw;
                 font-weight: 500;
                 color: $greyColor;
                 font-family: $FuturaPT;
@@ -46,14 +47,10 @@
     }
 
     &__search {
-        border-bottom: 1px solid transparent;
         display: flex;
         align-items: center;
         margin: 0 3.2vw 0 19.5vw;
-
-        &:hover {
-            border-bottom: 1px solid $greyColor;
-        }
+        width: 9vw;
 
         img {
             margin-right: 1.2vw;
@@ -66,9 +63,14 @@
             border: none;
             outline: none;
             transition: all 0.25s;
+            border-bottom: 1px solid transparent;
+
+            &:hover {
+                border-bottom: 1px solid $greyColor;
+            }
 
             &::placeholder {
-                font-size: 1vw;
+                font-size: 0.9vw;
                 font-weight: 500;
                 color: $greyColor;
                 font-family: $FuturaPT;
@@ -81,17 +83,33 @@
     }
 
     &__select {
-        display: none;
+
+        span {
+            color: $greyColor;
+        }
+
+        div {
+            font-size: 0.9vw;
+            font-weight: 500;
+            color: $greyColor;
+            font-family: $FuturaPT;
+            border: none;
+            outline: none;
+            border-color: transparent !important;
+            box-shadow: none !important;
+        }
     }
 
     &__loginBtn {
-        font-size: 1vw;
+        font-size: 0.9vw;
         margin-left: 9.5vw;
         font-weight: 500;
         color: $greyColor;
         font-family: $FuturaPT;
         border: none;
+        outline: none;
         background-color: transparent;
+        cursor: pointer;
 
         &:hover {
             color: $red;
