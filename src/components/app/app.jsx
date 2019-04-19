@@ -4,6 +4,7 @@ import Router from "../../utils/router";
 import Header from "../layouts/header";
 
 import "./app.module.scss";
+import "../assets/styles/_reset.scss"
 
 const App = () => {
     return (

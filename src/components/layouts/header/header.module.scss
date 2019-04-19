@@ -1,6 +1,100 @@
 @import "../../assets/styles/variables";
-@import "../../assets/styles/reset";
 
-.logo {
-    font-family: $FuturaPT;
+.header {
+    display: flex;
+    align-items: center;
+    margin: 3.3vw 6.1vw;
+
+    &__logo {
+        font-family: $FuturaPT;
+        display: flex;
+        align-items: center;
+
+        img {
+            width: 2.2vw;
+            height: 2.2vw;
+        }
+    
+        span {
+            font-size: 1vw;
+            font-weight: 500;
+            color: $greyColor;
+            margin-left: 1vw;
+        }
+    }
+
+    &__nav {
+        margin-left: 4.8vw;
+
+        ul {
+
+            a {
+                font-size: 1vw;
+                font-weight: 500;
+                color: $greyColor;
+                font-family: $FuturaPT;
+
+                &:not(:last-child) {
+                    margin-right: 3.6vw;
+                }
+
+                &:hover {
+                    color: $red;
+                }
+            }
+        }
+    }
+
+    &__search {
+        border-bottom: 1px solid transparent;
+        display: flex;
+        align-items: center;
+        margin: 0 3.2vw 0 19.5vw;
+
+        &:hover {
+            border-bottom: 1px solid $greyColor;
+        }
+
+        img {
+            margin-right: 1.2vw;
+            width: 0.9vw;
+            height: 0.9vw;
+        }
+
+        input {
+            width: 5.2vw;
+            border: none;
+            outline: none;
+            transition: all 0.25s;
+
+            &::placeholder {
+                font-size: 1vw;
+                font-weight: 500;
+                color: $greyColor;
+                font-family: $FuturaPT;
+            }
+
+            &:focus {
+                width: 9vw;
+            }
+        }
+    }
+
+    &__select {
+        display: none;
+    }
+
+    &__loginBtn {
+        font-size: 1vw;
+        margin-left: 9.5vw;
+        font-weight: 500;
+        color: $greyColor;
+        font-family: $FuturaPT;
+        border: none;
+        background-color: transparent;
+
+        &:hover {
+            color: $red;
+        }
+    }
 }
