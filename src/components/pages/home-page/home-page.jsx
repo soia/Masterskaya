@@ -2,7 +2,6 @@ import React from "react";
 
 import style from "./home-page.module.scss";
 
-import hub from "./images/hub.svg";
 import mobile from "./images/mobile.svg";
 import appStore from "./images/appStore.svg";
 import androidStore from "./images/androidStore.svg";
@@ -12,8 +11,7 @@ const HomePage = () => {
         <div className={style.homepage}>
             <div className={style.homepage__leftSide}>
                 <div className={style.homepage__hub}>
-                    <img src={hub} alt="hub" />
-                    <h1>Hub</h1>
+                    <h1>MHub</h1>
                 </div>
 
                 <p className={style.homepage__description}>Lorem ipsum dolor sit amet, consectetur orem ipsum dolor sit amet, consectetur orem ipsum dolor sit amet,
@@ -21,8 +19,12 @@ const HomePage = () => {
                 </p>
 
                 <div className={style.homepage__socialLinks}>
-                    <img src={appStore} alt="appStore" />
-                    <img src={androidStore} alt="androidStore" />
+                    <a href="https://www.apple.com/itunes/" target="_blank" rel="noopener noreferrer">
+                        <img src={appStore} alt="appStore" />
+                    </a>
+                    <a href="https://play.google.com/store/" target="_blank" rel="noopener noreferrer">
+                        <img src={androidStore} alt="androidStore" />
+                    </a>
                 </div>
 
             </div>

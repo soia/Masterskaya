@@ -4,7 +4,7 @@
     display: flex;
     align-items: center;
     justify-content: space-between;
-    margin: 3.3vw 6.1vw;
+    padding: 3.3vw 6.1vw;
 
     &__logo {
         font-family: $FuturaPT;
@@ -28,6 +28,8 @@
         margin-left: 4.8vw;
 
         ul {
+            display: flex;
+            align-items: center;
 
             a {
                 font-size: 0.9vw;
@@ -60,17 +62,23 @@
 
         input {
             width: 5.2vw;
+            min-height: 2vw;
             border: none;
             outline: none;
             transition: all 0.25s;
-            border-bottom: 1px solid transparent;
+            border-bottom: 0.1vw solid transparent;
+            font-size: 0.9vw;
+            font-weight: 500;
+            color: $greyColor;
+            font-family: $FuturaPT;
 
             &:hover {
-                border-bottom: 1px solid $greyColor;
+                border-bottom: 0.1vw solid $greyColor;
             }
 
             &::placeholder {
                 font-size: 0.9vw;
+                line-height: 0.9vw;
                 font-weight: 500;
                 color: $greyColor;
                 font-family: $FuturaPT;
@@ -79,6 +87,11 @@
             &:focus {
                 width: 9vw;
             }
+        }
+
+        label {
+            padding-bottom: 0.3vw;
+            display: flex;
         }
     }
 

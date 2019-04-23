@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 import { useTranslation } from "react-i18next";
 import { Select } from 'antd';
 
-import logo from "./images/logo.svg";
+import logo from "./images/logo.png";
 import search from "./images/search.svg";
 
 import style from "./header.module.scss";

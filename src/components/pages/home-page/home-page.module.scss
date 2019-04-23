@@ -44,7 +44,10 @@
     }
 
     &__socialLinks {
-        margin-top: 61px;
+        margin-top: 6.5vw;
+        display: flex;
+        align-items: center;
+        height: fit-content;
 
         img {
             width: 10.2vw;
