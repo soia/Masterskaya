@@ -5,11 +5,11 @@
     margin-left: 21vw;
 
     &__leftSide {
-        width: 40%;
+        width: 31.5vw;
 
         img {
-            width: 23.2vw;
-            height: 24.8vw;
+            width: 29vw;
+            height: 31vw;
         }
     }
 
@@ -32,15 +32,17 @@
             font-size: 3.4vw;
             font-weight: 500;
             color: $red;
-            margin-left: 0.5vw;
         }
     }
 
     &__description {
         font-family: $FuturaPT;
-        font-size: 0.9vw;
+        font-size: 1vw;
         line-height: 1.2vw;
         color: #000000;
+        max-width: 23vw;
+        max-height: 11vw;
+        overflow: hidden;
     }
 
     &__socialLinks {

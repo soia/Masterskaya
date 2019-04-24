@@ -7,6 +7,10 @@
         "login": "Login"
     },
 
+    "homePage": {
+        "description": "Ukrainian singer Ivan Dorn received the title of the best singer of the Russian Federation according to MTV. The actor won the victory thanks to the Russian MTV television viewers, who voted for him. At the same time, the Ukrainian musical group 'Mushrooms' fought for this title. Among the contenders for the victory were Russian performers, such as Elka, Husky and Elena Temnikova."
+    },
+
     "footer": {
         "contact": "Contacts"
     }
