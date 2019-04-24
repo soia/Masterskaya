@@ -6,7 +6,8 @@ import style from "./contacts-page.module.scss";
 
 class Contacts extends Component {
     state = {
-        visible : false
+        visible: false,
+        renderError: true
     }
 
     openModal() {

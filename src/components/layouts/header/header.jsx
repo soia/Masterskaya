@@ -1,4 +1,4 @@
-import React from "react";
+import React from 'react'
 import { Link } from "react-router-dom";
 import { useTranslation } from "react-i18next";
 import { Select } from 'antd';
@@ -9,9 +9,9 @@ import search from "./images/search.svg";
 import style from "./header.module.scss";
 import 'antd/dist/antd.css';
 
-const Option = Select.Option;
-
-const Header = () => {
+function Header() {
+    const currentLang = localStorage.getItem('i18nextLng');
+    const Option = Select.Option;
     const { t, i18n } = useTranslation();
 
     const changeLanguage = lng => {
@@ -22,7 +22,7 @@ const Header = () => {
         event.preventDefault();
         console.log('submit accsses');
     };
-
+  
     return (
         <header className={style.header}>
 
@@ -48,7 +48,7 @@ const Header = () => {
                 </div>
             </form>
 
-            <Select className={style.header__select} defaultValue="rus" onChange={changeLanguage}>
+            <Select className={style.header__select} defaultValue={currentLang || 'rus'} onChange={changeLanguage}>
                 <Option value="rus">Рус</Option>
                 <Option value="ukr">Укр</Option>
                 <Option value="Eng">Eng</Option>
@@ -58,6 +58,6 @@ const Header = () => {
 
         </header>
     );
-};
+  }
 
-export default Header;
+export default Header

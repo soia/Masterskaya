@@ -16,13 +16,13 @@ const DummyService = new DummyServices();
 
 ReactDOM.render(
     <Provider store={store}>
-        <ErrorBoundry>
             <InstrumentstoreServiceProvider value={DummyService}>
-                    <Suspense fallback={<Spinner />}>
+                <Suspense fallback={<Spinner />}>
+                    <ErrorBoundry>
                         <App />
-                    </Suspense>
+                    </ErrorBoundry>
+                </Suspense>
             </InstrumentstoreServiceProvider>
-        </ErrorBoundry>
     </Provider>,
     document.getElementById('root')
 );

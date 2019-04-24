@@ -22,6 +22,9 @@
     },
     "footer": {
         "contact": "Contacts"
+    },
+    "error": {
+        "title": "Something went wrong.",
+        "return": "Go back to the home page"
     }
-
 }
