@@ -1,0 +1,128 @@
+@import "../../assets/styles/variables";
+
+.contacts {
+    margin-left: 21vw;
+
+    &__title {
+        color: $greyColor;
+        font-family: $CoreSansG;
+        font-size: 3.4vw;
+        font-weight: 500;
+        margin: 2.9vw 0 5.5vw 0;
+    }
+
+    &__wrapper {
+        &_top, &_bottom  {
+            display: flex;
+        }
+    
+        &_top {
+            margin-bottom: 4.5vw;
+        }
+    
+        &_bottom {
+            .contacts__wrapper_row {
+                &:last-child {
+                    p {
+                        opacity: 0;
+                    }
+                }
+            }
+
+            .contacts__wrapper_row {
+                &:nth-child(2) {
+                    margin-right: 0.8vw;
+                }
+            }
+        }
+
+        &_row {
+            display: flex;
+            flex-direction: column;
+            min-width: 10.1vw;
+
+            &:not(:last-child) {
+                margin-right: 4.7vw;
+            }
+
+            &__title {
+                color: $greyLight;
+                font-family: $CoreSansG;
+                font-size: 1vw;
+                line-height: 1.2vw;
+                margin-bottom: 1vw;
+            }
+
+            &__subTitle, &__subTitleLink, &__socialLink {
+                color: $black;
+                font-family: $FuturaPT;
+                font-weight: normal;
+                font-size: 1vw;
+            }
+
+            &__socialLink {
+                width: 9.3vw;
+                height: 3.7vw;
+                border-radius: 0.2vw;
+                border: 0.1vw  solid $greyColor;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                transition: all 0.25s;
+
+                &:hover {
+                    color: $red;
+                    border: 0.1vw  solid $red;
+                }
+            }
+
+            &__btnMaps {
+                width: 7.9vw;
+                height: 3.7vw;
+                border-radius: 0.2vw;
+                border: 0.1vw  solid $red;
+                background-color: $red;
+                color: #fff;
+                font-family: $FuturaPT;
+                font-size: 1vw;
+                font-weight: 400;
+                transition: all 0.25s;
+                opacity: 0.9;
+                cursor: pointer;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+
+                &:hover {
+                    opacity: 1;
+                }
+            }
+
+            &__subTitleLink {
+                &:hover {
+                    color: $red;
+                }
+            }
+        }
+    }
+
+    &__modalWindow {
+        height: 100%;
+        width: 100%;
+
+        &_iframe {
+            height: 100%;
+            width: 100%;
+        }
+
+        &_close {
+            position: absolute;
+            top: -2vw;
+            color: #fff;
+            font-family: $FuturaPT;
+            font-weight: normal;
+            font-size: 1vw;
+            cursor: pointer;
+        }
+    }
+}
