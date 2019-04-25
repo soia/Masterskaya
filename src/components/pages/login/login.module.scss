@@ -1,0 +1,58 @@
+@import "../../assets/styles/variables";
+
+.login {
+
+    &__title {
+        color: #fff;
+        font-family: $FuturaPT;
+        font-size: 2.1vw;
+        font-weight: 500;
+        margin: 0 0 2vw 0;
+    }
+
+    &__input {
+        color: #fff;
+        font-family: $FuturaPT;
+        font-weight: 400;
+        font-size: 0.9vw;
+        border: none;
+        outline: none;
+        background-color: transparent;
+        border-bottom: 0.01vw solid #fff;
+        width: 100%;
+        padding: 0 0 0.5vw 1.1vw;
+
+        &::placeholder {
+            color: #fff;
+            font-family: $FuturaPT;
+            font-weight: 400;
+            font-size: 0.9vw;
+        }
+    }
+
+    &__buttons {
+
+        &_submit, &_registr {
+            width: 7.5vw;
+            height: 2.7vw;
+            background-color: transparent;
+            border-radius: .2vw;
+            color: #ffffff;
+            font-family: $FuturaPT;
+            cursor: pointer;
+            outline: none;
+        }
+
+        &_submit {
+            border: 0.1vw solid #fff;
+            font-size: 0.9vw;
+            font-weight: 400;
+        }
+
+        &_registr {
+            border: 0.1vw solid transparent;
+            font-size: 0.8vw;
+            font-weight: 400;
+        }
+    }
+}

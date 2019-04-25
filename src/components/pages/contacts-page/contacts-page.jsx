@@ -114,7 +114,7 @@ class Contacts extends Component {
                     <span
                         className={style.contacts__modalWindow_close}
                         onClick={() => this.closeModal()}>
-                            {t("contacts.close")}
+                            {t("close.close")}
                     </span>
                 </div>
                     </Modal>

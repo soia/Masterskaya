@@ -17,8 +17,7 @@
         "sendDemo": "Send demo",
         "maps": "Maps",
         "open": "Open",
-        "downloadApp": "Download app",
-        "close": "Close"
+        "downloadApp": "Download app"
     },
     "footer": {
         "contact": "Contacts"
@@ -26,5 +25,20 @@
     "error": {
         "title": "Something went wrong.",
         "return": "Go back to the home page"
+    },
+    "close": {
+        "close": "Close"
+    },
+    "login": {
+        "title": "Log in"
+    },
+    "enter": {
+        "name": "Enter"
+    },
+    "registration": {
+        "registration": "Registration"
+    },
+    "input": {
+        "error": "Must be {{count}} characters or more"
     }
 }

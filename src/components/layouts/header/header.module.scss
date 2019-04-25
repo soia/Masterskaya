@@ -31,18 +31,20 @@
             display: flex;
             align-items: center;
 
-            a {
-                font-size: 1vw;
-                font-weight: 500;
-                color: $greyColor;
-                font-family: $FuturaPT;
-
+            li {
                 &:not(:last-child) {
                     margin-right: 3.6vw;
                 }
 
-                &:hover {
-                    color: $red;
+                a {
+                    font-size: 1vw;
+                    font-weight: 500;
+                    color: $greyColor;
+                    font-family: $FuturaPT;
+
+                    &:hover {
+                        color: $red;
+                    }
                 }
             }
         }
@@ -155,5 +157,21 @@
         &:hover {
             color: $red;
         }
+    }
+}
+
+.sideBar {
+
+    &__close {
+        font-family: $FuturaPT;
+        font-size: 1vw;
+        font-weight: 500;
+        color: #fff;
+        border: none;
+        outline: none;
+        background-color: transparent;
+        cursor: pointer;
+        margin-bottom: 6vw;
+        padding: 0;
     }
 }
