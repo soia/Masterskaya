@@ -1,32 +1,40 @@
-import React from 'react'
+import React, { Component } from 'react'
 import { Link } from "react-router-dom";
-import { useTranslation } from "react-i18next";
-import { Select } from 'antd';
+import { withTranslation } from "react-i18next";
 import Sidebar from '../sidebar';
 import Login from '../../pages/login';
 import Registration from '../../pages/registration';
+import SelectLangeage from '../../change-language';
 
 import logo from "./images/logo.png";
 import search from "./images/search.svg";
 import closeImg from './images/close.svg';
 
 import style from "./header.module.scss";
-import "./antDesign.css";
 import 'antd/dist/antd.css';
 
-function Header() {
-    const currentLang = localStorage.getItem('i18nextLng');
-    const Option = Select.Option;
-    const { t, i18n } = useTranslation();
+export class Header extends Component {
 
-    const changeLanguage = lng => {
-        i18n.changeLanguage(lng);
+    state = {
+        loginBlock: true
     };
 
-    const handleSubmit = (event) => {
+    handleSubmit = (event) => {
         event.preventDefault();
         console.log('submit accsses');
     };
+
+    setLoginRegistr = () => {
+        this.setState((state) => {
+            return {  loginBlock: !this.state.loginBlock };
+        });
+    }
+
+  render() {
+
+    const { t } = this.props;
+
+    const loginBlock = this.state.loginBlock;
 
     const sidebarBack = {
         backgroundColor: "#232323",
@@ -64,7 +72,7 @@ function Header() {
                 </ul>
             </nav>
 
-            <form onSubmit={handleSubmit}>
+            <form onSubmit={this.handleSubmit}>
                 <div className={style.header__search}>
                     <label htmlFor="headerSearch">
                         <img
@@ -80,15 +88,7 @@ function Header() {
                 </div>
             </form>
 
-            <Select
-                className={style.header__select}
-                defaultValue={currentLang || 'rus'}
-                onChange={changeLanguage}
-            >
-                <Option value="rus">Рус</Option>
-                <Option value="ukr">Укр</Option>
-                <Option value="Eng">Eng</Option>
-            </Select>
+            <SelectLangeage />
 
             <Sidebar
                 buttonName={t("header.login")}
@@ -97,12 +97,13 @@ function Header() {
                 bodyStyle={sidebarBack}
                 img={closeImg}
             >
-                <Login />
-                <Registration />
+
+            {loginBlock ? <Login changeLoginRegistr={this.setLoginRegistr} /> : <Registration changeLoginRegistr={this.setLoginRegistr} />}
                 
             </Sidebar>
         </header>
-    );
+    )
+  }
 }
 
-export default Header;
+export default withTranslation()(Header);;

@@ -24,8 +24,8 @@ class Login extends Component {
         const { t } = this.props;
         event.preventDefault();
         const errors = {};
-        if (this.state.username.length < 5) {
-            errors.username = t('input.error', { count: '5'});
+        if (this.state.username.length < 4) {
+            errors.username = t('input.error', { count: 4});
         }
 
         if (this.state.password.length < 6) {
@@ -57,7 +57,7 @@ class Login extends Component {
                     <Field
                         id="username"
                         type="text"
-                        placeholder="Username"
+                        placeholder={t("username.title")}
                         name="username"
                         value={this.state.username}
                         onChange={this.onChange}
@@ -68,7 +68,7 @@ class Login extends Component {
                     <Field
                         id="password"
                         type="password"
-                        placeholder="Password"
+                        placeholder={t("password.title")}
                         name="password"
                         value={this.state.password}
                         onChange={this.onChange}
@@ -88,6 +88,7 @@ class Login extends Component {
 
                         <button
                             className={style.login__buttons_registr}
+                            onClick={this.props.changeLoginRegistr}
                             type="button"
                         >
                             {t("registration.registration")}

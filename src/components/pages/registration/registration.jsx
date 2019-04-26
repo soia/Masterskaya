@@ -8,12 +8,17 @@ class Registration extends Component {
     state = {
         username: "",
         password: "",
+        repeatPassword: "",
+        email: "",
+
         errors: {
             username: false,
-            password: false
+            password: false,
+            repeatPassword: false,
+            email: false
         }
     };
-
+    
     onChange = event => {
         this.setState({
             [event.target.name]: event.target.value
@@ -24,12 +29,20 @@ class Registration extends Component {
         const { t } = this.props;
         event.preventDefault();
         const errors = {};
-        if (this.state.username.length < 5) {
-            errors.username = t('input.error', { count: '5'});
+        if (this.state.username.length < 4) {
+            errors.username = t('input.error', { count: 4});
         }
 
         if (this.state.password.length < 6) {
             errors.password = t('input.error', { count: '6'});
+        }
+
+        if (this.state.password !== this.state.repeatPassword) {
+            errors.repeatPassword = t('repeatPassword.error');
+        }
+
+        if (!!this.state.email === false || this.state.email.match(/^([\w.%+-]+)@([\w-]+\.)+([\w]{2,})$/i) === null) {
+            errors.email = t('email.error');
         }
 
         if (Object.keys(errors).length > 0) {
@@ -40,7 +53,7 @@ class Registration extends Component {
             this.setState({
                 errors: {}
             });
-            console.log("Login Submit Success");
+            console.log("Registration Submit Success");
         }
     };
 
@@ -51,13 +64,13 @@ class Registration extends Component {
             <div className="login">
                 <h2
                     className={style.login__title}>
-                    Регистрация
+                    {t("registration.registration")}
                 </h2>
                 <form>
                     <Field
                         id="username"
                         type="text"
-                        placeholder="Username"
+                        placeholder={t("username.title")}
                         name="username"
                         value={this.state.username}
                         onChange={this.onChange}
@@ -66,13 +79,35 @@ class Registration extends Component {
                     />
 
                     <Field
+                        id="email"
+                        type="email"
+                        placeholder="email"
+                        name="email"
+                        value={this.state.email}
+                        onChange={this.onChange}
+                        error={this.state.errors.email}
+                        inputStyle={style.login__input}
+                    />      
+
+                    <Field
                         id="password"
                         type="password"
-                        placeholder="Password"
+                        placeholder={t("password.title")}
                         name="password"
                         value={this.state.password}
                         onChange={this.onChange}
                         error={this.state.errors.password}
+                        inputStyle={style.login__input}
+                    />
+
+                    <Field 
+                        id="repeatPassword"
+                        type="password"
+                        placeholder={t("repeatPassword.title")}
+                        name="repeatPassword"
+                        value={this.state.repeatPassword}
+                        onChange={this.onChange}
+                        error={this.state.errors.repeatPassword}
                         inputStyle={style.login__input}
                     />
 
@@ -83,14 +118,15 @@ class Registration extends Component {
                             className={style.login__buttons_submit}
                             type="submit"
                         >
-                            {t("enter.name")}
+                            {t("registration.registration")}
                         </button>
 
                         <button
                             className={style.login__buttons_registr}
+                            onClick={this.props.changeLoginRegistr}
                             type="button"
                         >
-                            {t("registration.registration")}
+                            {t("login.title")}
                         </button>
                     </div>
 

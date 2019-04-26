@@ -1,0 +1,50 @@
+@import "../assets/styles/variables";
+
+.changeLanguage {
+
+    &__select {
+        font-size: 1vw !important;
+        font-weight: 500;
+        color: $greyColor !important;
+        font-family: $FuturaPT;
+        border: none;
+        outline: none;
+        border-color: transparent !important;
+        box-shadow: none !important;
+        max-height: 2vw;
+
+        span {
+            color: $greyColor;
+        }
+
+        div {
+            font-size: 1vw;
+            font-weight: 500;
+            color: $greyColor;
+            font-family: $FuturaPT;
+            border: none;
+            outline: none;
+            border-color: transparent !important;
+            box-shadow: none !important;
+            max-height: 2vw;
+            height: 2vw !important;
+            overflow: inherit !important;
+            display: flex !important;
+            align-items: center;
+        }
+
+        span {
+            margin-bottom: 0 !important;
+            margin-top: -0.4vw !important;
+        }
+
+        i {
+            display: flex !important;
+            align-items: center
+        }
+
+        svg {
+            height: 0.9vw !important;
+        }
+    }
+}
