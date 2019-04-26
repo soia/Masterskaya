@@ -81,7 +81,7 @@ class Registration extends Component {
                     <Field
                         id="email"
                         type="email"
-                        placeholder="email"
+                        placeholder={t("email.title")}
                         name="email"
                         value={this.state.email}
                         onChange={this.onChange}

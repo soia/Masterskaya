@@ -7,7 +7,7 @@
         "login": "Login"
     },
     "homePage": {
-        "description": "Ukrainian singer Ivan Dorn received the title of the best singer of the Russian Federation according to MTV. The actor won the victory thanks to the Russian MTV television viewers, who voted for him. At the same time, the Ukrainian musical group 'Mushrooms' fought for this title. Among the contenders for the victory were Russian performers, such as Elka, Husky and Elena Temnikova."
+        "description": "Masterskaya is a record label of free music format, founded by Ivan Dorn. And, soon, an open creative space. We act as a platform for the implementation of original, in our opinion, musicians."
     },
     "contacts": {
         "contacts": "Contacts",
@@ -52,6 +52,14 @@
         "title": "Password"
     },
     "email": {
-        "error": "Invalid email"
+        "error": "Invalid email",
+        "title": "Email"
+    },
+    "studios": {
+        "title": "Studios",
+        "description": "In September, Ivan Dorn opened Masterskaya, his own recording studio and art space. Vogue.ua was the first to get acquainted with the team, as well as the brightest artists who collaborate with it, and Ivan Dorn composed poems about each character of our shooting."
+    },
+    "booked": {
+        "title": "Book"
     }
 }

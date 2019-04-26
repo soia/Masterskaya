@@ -1,0 +1,43 @@
+@mixin bookBtnRed {
+    font-size: 1vw;
+    width: 10.2vw;
+    height: 3vw;
+    border-radius: 0.3vw;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    font-family: $FuturaPT;
+    font-weight: 500;
+    background-color: $red;
+    color: #fff;
+    border: 2px solid transparent;
+    transition: all 0.25s;
+
+    &:hover {
+        background-color: transparent;
+        border: 2px solid $greyColor;
+        color: $greyColor;
+    }
+}
+
+@mixin bookBtnBlack {
+    font-size: 1vw;
+    width: 10.2vw;
+    height: 3vw;
+    border-radius: 0.3vw;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    font-family: $FuturaPT;
+    font-weight: 500;
+    background-color: transparent;
+    color: $greyColor;
+    border: 2px solid $greyColor;
+    transition: all 0.25s;
+
+    &:hover {
+        background-color: $red;
+        border: 2px solid transparent;
+        color: #fff;
+    }
+}
