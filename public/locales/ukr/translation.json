@@ -34,7 +34,8 @@
         "title": "Вхід"
     },
     "enter": {
-        "name": "Увійти"
+        "name": "Увійти",
+        "title": "Пошта"
     },
     "registration": {
         "registration": "Реєстрація"
@@ -54,7 +55,7 @@
     },
     "email": {
         "error": "Некоректна пошта",
-        "title": "Email"
+        "title": "Пошта"
     },
     "studios": {
         "title": "Студії",

@@ -1,7 +1,7 @@
 import React, { Fragment } from "react";
-import "./instrument-list-item.module.scss";
+import "./studios-list-item.module.scss";
 
-const InstrumentListItem = ({ instrument }) => {
+const StudiosListItem = ({ instrument }) => {
   const { title, instrumentItem } = instrument;
   return (
     <Fragment>
@@ -11,4 +11,4 @@ const InstrumentListItem = ({ instrument }) => {
   );
 };
 
-export default InstrumentListItem;
+export default StudiosListItem;

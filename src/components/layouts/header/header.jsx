@@ -2,9 +2,9 @@ import React, { Component } from 'react'
 import { Link } from "react-router-dom";
 import { withTranslation } from "react-i18next";
 import Sidebar from '../sidebar';
-import Login from '../../pages/login';
-import Registration from '../../pages/registration';
-import SelectLangeage from '../../change-language';
+import Login from '../../auth/login';
+import Registration from '../../auth/registration';
+import SelectLangeage from '../../language';
 
 import logo from "./images/logo.png";
 import search from "./images/search.svg";

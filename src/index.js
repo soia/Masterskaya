@@ -3,7 +3,7 @@ import ReactDOM from 'react-dom';
 import { Provider } from 'react-redux';
 
 import App from './components/app';
-import ErrorBoundry from './components/error-boundry';
+import ErrorBoundry from './components/pages/error-page/error-boundry';
 import DummyServices from './services/dummy-service';
 import Spinner from './components/spinner';
 import { InstrumentstoreServiceProvider } from './components/instrumentstore-service-context';

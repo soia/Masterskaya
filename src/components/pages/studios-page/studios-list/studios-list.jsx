@@ -1,12 +1,12 @@
 import React, { Component } from "react";
-import InstrumentListItem from "../instrument-list-item";
+import StudiosListItem from "../studios-list-item";
 import { connect } from "react-redux";
 
-import { withInstrumentstoreService } from "../hoc";
-import { instrumentsLoaded } from "../../actions";
-import { compose } from "../../utils";
+import { withInstrumentstoreService } from "../../../hoc";
+import { instrumentsLoaded } from "../../../../actions";
+import { compose } from "../../../../utils";
 
-import "./instrument-list.module.scss";
+import "./studios-list.module.scss";
 
 class InstrumentList extends Component {
   componentDidMount() {
@@ -25,7 +25,7 @@ class InstrumentList extends Component {
         {instruments.map(instrument => {
           return (
             <li key={instrument.id}>
-              <InstrumentListItem instrument={instrument} />
+              <StudiosListItem instrument={instrument} />
             </li>
           );
         })}

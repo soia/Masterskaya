@@ -13,6 +13,7 @@ import Header from "../layouts/header";
 import Footer from "../layouts/footer";
 
 import "./app.module.scss";
+import "./app.scss";
 import "../assets/styles/_reset.scss";
 import "../assets/styles/_fonts.scss";
 
