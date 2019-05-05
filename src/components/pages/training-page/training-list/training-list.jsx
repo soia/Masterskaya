@@ -48,7 +48,7 @@ class StudiosListContainer extends Component {
     }
 }
 
-const mapStateToProps = ({ studios, loading, error }) => {
+const mapStateToProps = ({ studioAndTrainingList: { studios, loading, error }}) => {
     return { studios, loading, error };
 };
 
