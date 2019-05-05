@@ -24,13 +24,6 @@
     line-height: 1.7vw;
 }
 
-.cost {
-    color: $red;
-    font-family: $CoreSansG;
-    font-size: 1.5vw;
-    margin-bottom: 1.85vw;
-}
-
 .bookBtnBlack {
     @include bookBtnBlack;
 }

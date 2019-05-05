@@ -1,45 +1,43 @@
 import React, { Fragment } from "react";
 import { useTranslation } from "react-i18next";
 import ButtonBook from '../../small-components/button-book';
-import StudiosList from './training-list';
+import TrainingList from './training-list';
 
 import style from "./training-page.module.scss";
 
 import mobile from "./images/mobile.svg";
 
-const Studios = () => {
+const Training = () => {
     const { t } = useTranslation();
 
     return (
         <Fragment>
-            <div className={style.studios}>
-                <div className={style.studios__leftSide}>
+            <div className={style.training}>
+                <div className={style.training__leftSide}>
 
                     <h2
-                        className={style.studios__title}>
-                        {t("studios.title")}
+                        className={style.training__title}>
+                        {t("training.title")}
                     </h2>
 
                     <p
-                        className={style.studios__description}>
-                        {t("studios.description")}
+                        className={style.training__description}>
+                        {t("training.description")}
                     </p>
 
-                    <div className={style.studios__buttonBook}>
-                        <ButtonBook
-                            bookStyles={style.studios__bookBtnRed}
-                            title={t("booked.title")}
-                        />
-                    </div>
+                    <ButtonBook
+                        bookStyles={style.training__bookBtnRed}
+                        title={t("more.title")}
+                    />
                 </div>
 
-                <div className={style.studios__leftSide}>
+                <div className={style.training__leftSide}>
                     <img src={mobile} alt="mobile" />
                 </div>
             </div>
-            <StudiosList />
+            <TrainingList />
         </Fragment>
     );
 };
 
-export default Studios;
+export default Training;

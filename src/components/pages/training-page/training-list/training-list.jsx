@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import StudiosListItem from "../training-list-item";
+import TrainingListItem from "../training-list-item";
 import { connect } from "react-redux";
 import Spinner from "../../../spinner";
 import ErrorIndicator from '../../error-page/error-indicator';
@@ -10,16 +10,16 @@ import { compose } from "../../../../utils";
 
 import style from "./training-list.module.scss";
 
-const StudioList = ({ studios }) => {
+const TrainingList = ({ studios }) => {
     return (
         <div className={style.contentPage}>
-            {studios.map(studio => {
+            {studios.map(training => {
                 return (
                     <div
                         className={style.contentPage__item}
-                        key={studio.id}
+                        key={training.id}
                     >
-                        <StudiosListItem studio={studio} />
+                        <TrainingListItem training={training} />
                     </div>
                 );
             })}
@@ -27,7 +27,7 @@ const StudioList = ({ studios }) => {
     );
 }
 
-class StudiosListContainer extends Component {
+class TrainingListContainer extends Component {
 
     componentDidMount() {
         this.props.fetchTraining();
@@ -44,7 +44,7 @@ class StudiosListContainer extends Component {
             return <ErrorIndicator />;
         }
 
-        return <StudioList studios={studios} />;
+        return <TrainingList studios={studios} />;
     }
 }
 
@@ -64,4 +64,4 @@ export default compose(
         mapStateToProps,
         mapDispatchToProps
     )
-)(StudiosListContainer);
+)(TrainingListContainer);
