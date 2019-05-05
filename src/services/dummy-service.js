@@ -34,26 +34,18 @@ export default class DummyService {
     ];
 
     getStudios() {
-        return new Promise((resolve, reject) => {
+        return new Promise((resolve) => {
             setTimeout(() => {
-                if (Math.random() > 0.75) {
-                    reject(new Error('Something bad happened'));
-                } else {
-                    resolve(this.studios);
-                }
-            }, 700);
+                resolve(this.studios);
+            }, 100);
         });
     }
 
     getTraining() {
         return new Promise((resolve, reject) => {
             setTimeout(() => {
-                if (Math.random() > 0.75) {
-                    reject(new Error('Something bad happened'));
-                } else {
-                    resolve(this.training);
-                }
-            }, 700);
+                resolve(this.training);
+            }, 100);
         });
     }
 }

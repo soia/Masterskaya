@@ -60,7 +60,7 @@ export class Header extends Component {
                         </Link>
                     </li>
                     <li>
-                        <Link to="/synthesizers">
+                        <Link to="/instrument">
                             {t("header.synthesizers")}
                         </Link>
                     </li>

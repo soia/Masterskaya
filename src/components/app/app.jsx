@@ -3,7 +3,7 @@ import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import {
     HomePage,
     Studios,
-    Synthesizers,
+    Instrument,
     Training,
     PageNotFound,
     Contacts
@@ -34,8 +34,8 @@ const App = () => {
                     />
 
                     <Route
-                        path="/synthesizers"
-                        component={ Synthesizers }
+                        path="/instrument"
+                        component={ Instrument }
                     />
 
                     <Route

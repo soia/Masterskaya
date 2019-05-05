@@ -1,0 +1,15 @@
+.downloadApp {
+    margin-top: 6.5vw;
+    display: flex;
+    align-items: center;
+    height: fit-content;
+
+    img {
+        width: 10.2vw;
+        height: 3vw;
+
+        &:first-child {
+            margin-right: 1.3vw;
+        }
+    }
+}

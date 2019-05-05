@@ -1,63 +1,11 @@
 @import "../../assets/styles/variables";
 
-.homepage {
+.title {
+    font-family: $CoreSansG;
     display: flex;
-    margin-left: 21vw;
-
-    &__leftSide {
-        width: 31.5vw;
-
-        img {
-            width: 29vw;
-            height: 31vw;
-        }
-    }
-
-    &__rightSide {
-        width: 60%;
-    }
-
-    &__hub {
-        display: flex;
-        margin-top: 4vw;
-        margin-bottom: 2.2vw;
-
-        img {
-            width: 2.9vw;
-            height: 3.4vw;
-        }
-
-        h1 {
-            font-family: $CoreSansG;
-            font-size: 3.4vw;
-            font-weight: 500;
-            color: $red;
-        }
-    }
-
-    &__description {
-        font-family: $FuturaPT;
-        font-size: 1vw;
-        line-height: 1.2vw;
-        color: #000000;
-        max-width: 23vw;
-        max-height: 11vw;
-        overflow: hidden;
-    }
-
-    &__socialLinks {
-        margin-top: 6.5vw;
-        display: flex;
-        align-items: center;
-        height: fit-content;
-
-        img {
-            width: 10.2vw;
-            height: 3vw;
-
-            &:first-child {
-                margin-right: 1.3vw;
-            }
-        }
-    }
+    margin-top: 4vw;
+    margin-bottom: 2.2vw;
+    font-size: 3.4vw;
+    font-weight: 500;
+    color: $red;
 }
