@@ -1,3 +1,3 @@
-import InstrumentList from './studios-list';
+import StudioList from './studios-list';
 
-export default InstrumentList;
+export default StudioList;

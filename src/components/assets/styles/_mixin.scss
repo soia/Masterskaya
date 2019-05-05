@@ -7,15 +7,15 @@
     outline: none;
     cursor: pointer;
     font-family: $FuturaPT;
-    font-weight: 500;
     background-color: $red;
     color: #fff;
-    border: 2px solid transparent;
+    border: 0.1vw solid transparent;
     transition: all 0.25s;
+    padding: 0;
 
     &:hover {
         background-color: transparent;
-        border: 2px solid $greyColor;
+        border: 0.1vw solid $greyColor;
         color: $greyColor;
     }
 }
@@ -29,15 +29,15 @@
     outline: none;
     cursor: pointer;
     font-family: $FuturaPT;
-    font-weight: 500;
     background-color: transparent;
     color: $greyColor;
-    border: 2px solid $greyColor;
+    border: 0.1vw solid $greyColor;
     transition: all 0.25s;
+    padding: 0;
 
     &:hover {
         background-color: $red;
-        border: 2px solid transparent;
+        border: 0.1vw solid transparent;
         color: #fff;
     }
 }

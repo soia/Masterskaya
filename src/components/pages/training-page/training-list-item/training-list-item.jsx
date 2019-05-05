@@ -1,6 +1,6 @@
 import React, { Fragment } from "react";
 import { useTranslation } from "react-i18next";
-import style from "./studios-list-item.module.scss";
+import style from "./training-list-item.module.scss";
 import ButtonBook from '../../../small-components/button-book';
 
 const StudiosListItem = ({ studio }) => {

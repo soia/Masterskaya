@@ -59,7 +59,23 @@
         "title": "Studios",
         "description": "In September, Ivan Dorn opened Masterskaya, his own recording studio and art space. Vogue.ua was the first to get acquainted with the team, as well as the brightest artists who collaborate with it, and Ivan Dorn composed poems about each character of our shooting."
     },
+    "studio": {
+        "title": "Studio"
+    },
     "booked": {
         "title": "Book"
+    },
+    "more": {
+        "title": "Read more"
+    },
+    "cost": {
+        "cost": "UAH / hour"
+    },
+    "training": {
+        "title": "Training",
+        "description": "In September, Ivan Dorn opened Masterskaya, his own recording studio and art space. Vogue.ua was the first to get acquainted with the team, as well as the brightest artists who collaborate with it, and Ivan Dorn composed poems about each character of our shooting."
+    },
+    "program": {
+        "title": "Program"
     }
 }

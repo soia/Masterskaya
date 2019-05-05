@@ -1,14 +1,14 @@
 import React, { Component } from "react";
-import StudiosListItem from "../studios-list-item";
+import StudiosListItem from "../training-list-item";
 import { connect } from "react-redux";
 import Spinner from "../../../spinner";
 import ErrorIndicator from '../../error-page/error-indicator';
 
 import { withStoreService } from "../../../hoc";
-import { fetchStudios } from "../../../../actions";
+import { fetchTraining } from "../../../../actions";
 import { compose } from "../../../../utils";
 
-import style from "./studios-list.module.scss";
+import style from "./training-list.module.scss";
 
 const StudioList = ({ studios }) => {
     return (
@@ -30,7 +30,7 @@ const StudioList = ({ studios }) => {
 class StudiosListContainer extends Component {
 
     componentDidMount() {
-        this.props.fetchStudios();
+        this.props.fetchTraining();
     }
 
     render() {
@@ -54,7 +54,7 @@ const mapStateToProps = ({ studios, loading, error }) => {
 
 const mapDispatchToProps = (dispatch, { storeService }) => {
     return {
-        fetchStudios: fetchStudios( storeService, dispatch )
+        fetchTraining: fetchTraining( storeService, dispatch )
     }
 }
 

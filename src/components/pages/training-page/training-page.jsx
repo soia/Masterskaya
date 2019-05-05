@@ -1,9 +1,45 @@
-import React from "react";
+import React, { Fragment } from "react";
+import { useTranslation } from "react-i18next";
+import ButtonBook from '../../small-components/button-book';
+import StudiosList from './training-list';
 
-import "./training-page.module.scss";
+import style from "./training-page.module.scss";
 
-const Training = () => {
-  return <div>Training Page</div>;
+import mobile from "./images/mobile.svg";
+
+const Studios = () => {
+    const { t } = useTranslation();
+
+    return (
+        <Fragment>
+            <div className={style.studios}>
+                <div className={style.studios__leftSide}>
+
+                    <h2
+                        className={style.studios__title}>
+                        {t("studios.title")}
+                    </h2>
+
+                    <p
+                        className={style.studios__description}>
+                        {t("studios.description")}
+                    </p>
+
+                    <div className={style.studios__buttonBook}>
+                        <ButtonBook
+                            bookStyles={style.studios__bookBtnRed}
+                            title={t("booked.title")}
+                        />
+                    </div>
+                </div>
+
+                <div className={style.studios__leftSide}>
+                    <img src={mobile} alt="mobile" />
+                </div>
+            </div>
+            <StudiosList />
+        </Fragment>
+    );
 };
 
-export default Training;
+export default Studios;

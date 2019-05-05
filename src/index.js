@@ -6,7 +6,7 @@ import App from './components/app';
 import ErrorBoundry from './components/pages/error-page/error-boundry';
 import DummyServices from './services/dummy-service';
 import Spinner from './components/spinner';
-import { InstrumentstoreServiceProvider } from './components/instrumentstore-service-context';
+import { StoreServiceProvider } from './components/store-service-context';
 
 import store from './store';
 import './i18n';
@@ -16,13 +16,13 @@ const DummyService = new DummyServices();
 
 ReactDOM.render(
     <Provider store={store}>
-            <InstrumentstoreServiceProvider value={DummyService}>
+            <StoreServiceProvider value={DummyService}>
                 <Suspense fallback={<Spinner />}>
                     <ErrorBoundry>
                         <App />
                     </ErrorBoundry>
                 </Suspense>
-            </InstrumentstoreServiceProvider>
+            </StoreServiceProvider>
     </Provider>,
     document.getElementById('root')
 );

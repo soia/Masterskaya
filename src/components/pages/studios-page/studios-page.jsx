@@ -26,7 +26,10 @@ const Studios = () => {
                     </p>
 
                     <div className={style.studios__buttonBook}>
-                        <ButtonBook bookStyles={style.studios__bookBtnRed} />
+                        <ButtonBook
+                            bookStyles={style.studios__bookBtnRed}
+                            title={t("booked.title")}
+                        />
                     </div>
                 </div>
 
@@ -34,10 +37,6 @@ const Studios = () => {
                     <img src={mobile} alt="mobile" />
                 </div>
             </div>
-            <StudiosList />
-            <StudiosList />
-            <StudiosList />
-            <StudiosList />
             <StudiosList />
         </Fragment>
     );

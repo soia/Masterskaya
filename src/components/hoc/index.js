@@ -1,5 +1,5 @@
-import withInstrumentstoreService from './with-instrumentstore-service';
+import withStoreService from './with-store-service';
 
 export {
-    withInstrumentstoreService
+    withStoreService
 };
