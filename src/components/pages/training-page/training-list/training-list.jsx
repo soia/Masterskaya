@@ -10,10 +10,10 @@ import { compose } from "../../../../utils";
 
 import style from "./training-list.module.scss";
 
-const TrainingList = ({ studios }) => {
+const TrainingList = ({ dataItem }) => {
     return (
         <div className={style.contentPage}>
-            {studios.map(training => {
+            {dataItem.map(training => {
                 return (
                     <div
                         className={style.contentPage__item}
@@ -34,7 +34,7 @@ class TrainingListContainer extends Component {
     }
 
     render() {
-        const { studios, loading, error } = this.props;
+        const { dataItem, loading, error } = this.props;
 
         if (loading) {
             return <Spinner />;
@@ -44,12 +44,12 @@ class TrainingListContainer extends Component {
             return <ErrorIndicator />;
         }
 
-        return <TrainingList studios={studios} />;
+        return <TrainingList dataItem={dataItem} />;
     }
 }
 
-const mapStateToProps = ({ studioAndTrainingList: { studios, loading, error }}) => {
-    return { studios, loading, error };
+const mapStateToProps = ({ studioAndTrainingList: { dataItem, loading, error }}) => {
+    return { dataItem, loading, error };
 };
 
 const mapDispatchToProps = (dispatch, { storeService }) => {

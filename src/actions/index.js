@@ -1,35 +1,35 @@
-const studiosLoaded = (newStudios) => {
+const contentLoaded = (newStudios) => {
     return {
-        type: 'FETCH_STUDIOS_SUCCESS',
+        type: 'FETCH_CONTENT_SUCCESS',
         payload: newStudios
     };
 };
 
-const studiosRequested = () => {
+const contentRequested = () => {
     return {
-        type: 'FETCH_STUDIOS_REQUEST'
+        type: 'FETCH_CONTENT_REQUEST'
     };
 };
 
-const studiosError = ( error ) => {
+const contentError = ( error ) => {
     return {
-        type: 'FETCH_STUDIOS_FAILURE',
+        type: 'FETCH_CONTENT_FAILURE',
         payload: error
     };
 };
 
 const fetchStudios = ( storeService, dispatch ) => () => { 
-    dispatch(studiosRequested());
+    dispatch(contentRequested());
     storeService.getStudios()
-        .then(data => dispatch(studiosLoaded(data)))
-        .catch((err) => dispatch(studiosError(err)));
+        .then(data => dispatch(contentLoaded(data)))
+        .catch((err) => dispatch(contentError(err)));
 }
 
 const fetchTraining = ( storeService, dispatch ) => () => { 
-    dispatch(studiosRequested());
+    dispatch(contentRequested());
     storeService.getTraining()
-        .then(data => dispatch(studiosLoaded(data)))
-        .catch((err) => dispatch(studiosError(err)));
+        .then(data => dispatch(contentLoaded(data)))
+        .catch((err) => dispatch(contentError(err)));
 }
 
 export {

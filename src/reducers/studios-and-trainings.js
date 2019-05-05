@@ -2,30 +2,30 @@ const updateStudioAndTrainingList = (state, action) => {
 
     if (state === undefined) {
         return {
-            studios: [],
+            dataItem: [],
             loading: true,
             error: null
         };
     }
 
     switch (action.type) {
-        case 'FETCH_STUDIOS_REQUEST':
+        case 'FETCH_CONTENT_REQUEST':
             return {
-                studios: [],
+                dataItem: [],
                 loading: true,
                 error: null
             };
 
-        case 'FETCH_STUDIOS_SUCCESS':
+        case 'FETCH_CONTENT_SUCCESS':
             return {
-                studios: action.payload,
+                dataItem: action.payload,
                 loading: false,
                 error: null
             };
 
-        case 'FETCH_STUDIOS_FAILURE':
+        case 'FETCH_CONTENT_FAILURE':
             return {
-                studios: [],
+                dataItem: [],
                 loading: false,
                 error: action.payload
             };
