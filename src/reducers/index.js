@@ -1,8 +1,8 @@
-import updateStudioAndTrainingList from './studios-and-trainings';
+import updatepagesList from './studios-and-trainings';
 
 const reducer = (state, action) => {
     return {
-        studioAndTrainingList: updateStudioAndTrainingList(state, action)
+        pagesList: updatepagesList(state, action)
     }
 };
 

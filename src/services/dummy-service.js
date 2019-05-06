@@ -33,6 +33,41 @@ export default class DummyService {
         }
     ];
 
+    synthesizer = [
+        {
+            id: 1,
+            description: 'Синтезатор Yamaha PSR-E263',
+            img: 'https://i.ibb.co/kgqDPKR/sintezator-yamaha-montage-6-montage6-2151-0-3.png',
+        },
+        {
+            id: 2,
+            description: 'Синтезатор Yamaha PSR-E263',
+            img: 'https://i.ibb.co/kgqDPKR/sintezator-yamaha-montage-6-montage6-2151-0-3.png',
+        },
+        {
+            id: 3,
+            description: 'Синтезатор Yamaha PSR-E263',
+            img: 'https://i.ibb.co/kgqDPKR/sintezator-yamaha-montage-6-montage6-2151-0-3.png',
+        },
+        {
+            id: 4,
+            description: 'Синтезатор Yamaha PSR-E263',
+            img: 'https://i.ibb.co/kgqDPKR/sintezator-yamaha-montage-6-montage6-2151-0-3.png',
+        },
+        {
+            id: 5,
+            description: 'Синтезатор Yamaha PSR-E263',
+            img: 'https://i.ibb.co/kgqDPKR/sintezator-yamaha-montage-6-montage6-2151-0-3.png',
+        },
+        {
+            id: 6,
+            description: 'Синтезатор Yamaha PSR-E263',
+            img: 'https://i.ibb.co/kgqDPKR/sintezator-yamaha-montage-6-montage6-2151-0-3.png',
+        }
+    ];
+
+    
+
     getStudios() {
         return new Promise((resolve) => {
             setTimeout(() => {
@@ -42,9 +77,17 @@ export default class DummyService {
     }
 
     getTraining() {
-        return new Promise((resolve, reject) => {
+        return new Promise((resolve) => {
             setTimeout(() => {
                 resolve(this.training);
+            }, 100);
+        });
+    }
+
+    getSynthesizer() {
+        return new Promise((resolve) => {
+            setTimeout(() => {
+                resolve(this.synthesizer);
             }, 100);
         });
     }

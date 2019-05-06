@@ -2,6 +2,7 @@ import React, { Fragment } from "react";
 import { useTranslation } from "react-i18next";
 import ButtonBook from '../../small-components/button-book';
 import MainBlock from '../../layouts/main-top-block';
+import InstrumentList from '../instrument-page/instrument-list';
 
 import style from "./instrument-page.module.scss";
 
@@ -20,6 +21,7 @@ const Instrument = () => {
                     title={t("booked.title")}
                 />
             </MainBlock>
+            <InstrumentList />
         </Fragment>
     );
 };

@@ -1,4 +1,4 @@
-const updateStudioAndTrainingList = (state, action) => {
+const updatepagesList = (state, action) => {
 
     if (state === undefined) {
         return {
@@ -31,8 +31,8 @@ const updateStudioAndTrainingList = (state, action) => {
             };
 
         default:
-            return state.studioAndTrainingList;
+            return state.pagesList;
     }
 }
 
-export default updateStudioAndTrainingList;
+export default updatepagesList;

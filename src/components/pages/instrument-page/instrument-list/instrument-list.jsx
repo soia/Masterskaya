@@ -1,25 +1,25 @@
 import React, { Component } from "react";
-import TrainingListItem from "../training-list-item";
+import InstrumentListItem from "../instrument-list-item";
 import { connect } from "react-redux";
 import Spinner from "../../../spinner";
 import ErrorIndicator from '../../error-page/error-indicator';
 
 import { withStoreService } from "../../../hoc";
-import { fetchTraining } from "../../../../actions";
+import { fetchSynthesizer } from "../../../../actions";
 import { compose } from "../../../../utils";
 
-import style from "./training-list.module.scss";
+import style from "./instrument-list.module.scss";
 
-const TrainingList = ({ dataItem }) => {
+const InstrumentList = ({ dataItem }) => {
     return (
         <div className={style.contentPage}>
-            {dataItem.map(training => {
+            {dataItem.map(instrument => {
                 return (
                     <div
                         className={style.contentPage__item}
-                        key={training.id}
+                        key={instrument.id}
                     >
-                        <TrainingListItem training={training} />
+                        <InstrumentListItem instrument={instrument} />
                     </div>
                 );
             })}
@@ -27,10 +27,10 @@ const TrainingList = ({ dataItem }) => {
     );
 }
 
-class TrainingListContainer extends Component {
+class InstrumentListContainer extends Component {
 
     componentDidMount() {
-        this.props.fetchTraining();
+        this.props.fetchSynthesizer();
     }
 
     render() {
@@ -44,17 +44,16 @@ class TrainingListContainer extends Component {
             return <ErrorIndicator />;
         }
 
-        return <TrainingList dataItem={dataItem} />;
+        return <InstrumentList dataItem={dataItem} />;
     }
 }
-
 const mapStateToProps = ({ pagesList: { dataItem, loading, error }}) => {
     return { dataItem, loading, error };
 };
 
 const mapDispatchToProps = (dispatch, { storeService }) => {
     return {
-        fetchTraining: fetchTraining( storeService, dispatch )
+        fetchSynthesizer: fetchSynthesizer( storeService, dispatch )
     }
 }
 
@@ -64,4 +63,4 @@ export default compose(
         mapStateToProps,
         mapDispatchToProps
     )
-)(TrainingListContainer);
+)(InstrumentListContainer);

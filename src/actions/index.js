@@ -32,7 +32,15 @@ const fetchTraining = ( storeService, dispatch ) => () => {
         .catch((err) => dispatch(contentError(err)));
 }
 
+const fetchSynthesizer = ( storeService, dispatch ) => () => { 
+    dispatch(contentRequested());
+    storeService.getSynthesizer()
+        .then(data => dispatch(contentLoaded(data)))
+        .catch((err) => dispatch(contentError(err)));
+}
+
 export {
     fetchStudios,
-    fetchTraining
+    fetchTraining,
+    fetchSynthesizer
 };

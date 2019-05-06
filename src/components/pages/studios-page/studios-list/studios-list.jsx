@@ -47,7 +47,7 @@ class StudiosListContainer extends Component {
         return <StudioList dataItem={dataItem} />;
     }
 }
-const mapStateToProps = ({ studioAndTrainingList: { dataItem, loading, error }}) => {
+const mapStateToProps = ({ pagesList: { dataItem, loading, error }}) => {
     return { dataItem, loading, error };
 };
 
