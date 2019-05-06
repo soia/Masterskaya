@@ -1,7 +1,10 @@
 .contentPage {
     margin: 0 0 3vw 21vw;
+    display: flex;
+    flex-wrap: wrap;
 
     &__item {
-        margin-bottom: 6.3vw;
+        margin: 0 2.3vw 6.3vw 0;
+        max-width: 22.4vw;
     }
 }

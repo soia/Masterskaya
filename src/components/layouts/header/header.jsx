@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import { Link } from "react-router-dom";
+import { Link, NavLink  } from "react-router-dom";
 import { withTranslation } from "react-i18next";
 import Sidebar from '../sidebar';
 import Login from '../../auth/login';
@@ -55,19 +55,28 @@ export class Header extends Component {
             <nav className={style.header__nav}>
                 <ul>
                     <li>
-                        <Link to="/studios">
+                        <NavLink
+                            to="/studios"
+                            activeStyle={{ color: "#ff0034"}}
+                        >
                             {t("header.studios")}
-                        </Link>
+                        </NavLink>
                     </li>
                     <li>
-                        <Link to="/instrument">
+                        <NavLink
+                            to="/instrument"
+                            activeStyle={{ color: "#ff0034"}}
+                        >
                             {t("header.synthesizers")}
-                        </Link>
+                        </NavLink>
                     </li>
                     <li>
-                        <Link to="/training">
+                        <NavLink
+                            to="/training"
+                            activeStyle={{ color: "#ff0034"}}
+                        >
                             {t("header.training")}
-                        </Link>
+                        </NavLink>
                     </li>
                 </ul>
             </nav>

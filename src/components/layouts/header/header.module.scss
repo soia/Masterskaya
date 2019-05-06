@@ -17,7 +17,7 @@
         }
     
         span {
-            font-size: 1vw;
+            font-size: 1.1vw;
             font-weight: 500;
             color: $greyColor;
             margin-left: 1vw;
@@ -37,7 +37,7 @@
                 }
 
                 a {
-                    font-size: 1vw;
+                    font-size: 1.1vw;
                     font-weight: 500;
                     color: $greyColor;
                     font-family: $FuturaPT;
@@ -70,7 +70,7 @@
             transition: all 0.25s;
             border-bottom: 0.1vw solid transparent;
             transform: translateY(0.1vw);
-            font-size: 1vw;
+            font-size: 1.1vw;
             font-weight: 500;
             color: $greyColor;
             font-family: $FuturaPT;
@@ -80,7 +80,7 @@
             }
 
             &::placeholder {
-                font-size: 1vw;
+                font-size: 1.1vw;
                 line-height: 0.9vw;
                 font-weight: 500;
                 color: $greyColor;
@@ -98,7 +98,7 @@
     }
 
     &__loginBtn {
-        font-size: 1vw;
+        font-size: 1.1vw;
         margin-left: 9.5vw;
         font-weight: 500;
         color: $greyColor;
@@ -118,7 +118,7 @@
 
     &__close {
         font-family: $FuturaPT;
-        font-size: 1vw;
+        font-size: 1.1vw;
         font-weight: 500;
         color: #fff;
         border: none;

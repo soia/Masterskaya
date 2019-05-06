@@ -31,7 +31,14 @@
 
             .contacts__wrapper_row {
                 &:nth-child(2) {
-                    margin-right: 0.8vw;
+                    margin-right: 2.15vw;
+                }
+            }
+
+            .contacts__wrapper_row {
+
+                &:first-child {
+                    margin-right: 7.6vw;
                 }
             }
         }
@@ -48,8 +55,8 @@
             &__title {
                 color: $greyLight;
                 font-family: $CoreSansG;
-                font-size: 1vw;
-                line-height: 1.2vw;
+                font-size: 1.1vw;
+                line-height: 1.5vw;
                 margin-bottom: 1vw;
             }
 
@@ -57,12 +64,12 @@
                 color: $black;
                 font-family: $FuturaPT;
                 font-weight: normal;
-                font-size: 1vw;
+                font-size: 1.3vw;
             }
 
             &__socialLink {
-                width: 9.3vw;
-                height: 3.7vw;
+                width: 11.6vw;
+                height: 4.65vw;
                 border-radius: 0.2vw;
                 border: 0.1vw  solid $greyColor;
                 display: flex;
@@ -77,14 +84,14 @@
             }
 
             &__btnMaps {
-                width: 7.9vw;
-                height: 3.7vw;
+                width: 9.9vw;
+                height: 4.65vw;
                 border-radius: 0.2vw;
                 border: 0.1vw  solid $red;
                 background-color: $red;
                 color: #fff;
                 font-family: $FuturaPT;
-                font-size: 1vw;
+                font-size: 1.1vw;
                 font-weight: 400;
                 transition: all 0.25s;
                 opacity: 0.9;
@@ -121,7 +128,7 @@
             color: #fff;
             font-family: $FuturaPT;
             font-weight: normal;
-            font-size: 1vw;
+            font-size: 1.1vw;
             cursor: pointer;
         }
     }
