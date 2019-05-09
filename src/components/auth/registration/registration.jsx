@@ -1,7 +1,11 @@
 import React, { Component } from 'react';
 import { withTranslation } from 'react-i18next';
 import Field from '../../small-components/field';
+import { message } from 'antd';
+
 import style from './registration.module.scss';
+import "./antDesign.css";
+import 'antd/dist/antd.css';
 
 class Registration extends Component {
 
@@ -54,6 +58,10 @@ class Registration extends Component {
                 errors: {}
             });
             console.log("Registration Submit Success");
+            message.success(t('antMessage.SuccessRegistr'), 2);
+            setTimeout(() => { 
+                this.props.changeLoginRegistr();
+            }, 2000);
         }
     };
 
