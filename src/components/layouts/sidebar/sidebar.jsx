@@ -12,12 +12,6 @@ class Sidebar extends Component {
         placement: 'right'
     };
 
-    showDrawer = () => {
-        this.setState({
-            visible: !this.state.visible
-        });
-    };
-
     onClose = () => {
         this.setState({
             visible: !this.state.visible
@@ -28,8 +22,10 @@ class Sidebar extends Component {
         const { loggingIn } = this.props;
 
         if (loggingIn) {
+            // eslint-disable-next-line 
             this.state.visible = false;
         }
+
     }
 
     render() {
@@ -37,7 +33,7 @@ class Sidebar extends Component {
             <Fragment>
                 <button
                     className={this.props.titleStyles}
-                    onClick={this.showDrawer}>
+                    onClick={this.onClose}>
                     {this.props.buttonName}
                 </button>
                 <Drawer

@@ -1,4 +1,4 @@
-import { authHeader } from '../_helpers';
+import { authHeader } from '../helpers';
 
 const config = 'http://localhost:3000';
 

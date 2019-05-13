@@ -1,4 +1,4 @@
-import { userConstants } from '../_constants';
+import { userConstants } from '../constants';
 import { userService } from '../services/user.service';
 import { alertActions } from './';
 

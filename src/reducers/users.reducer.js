@@ -1,4 +1,4 @@
-import { userConstants } from '../_constants';
+import { userConstants } from '../constants';
 
 const users = (state = {}, action) => {
     switch (action.type) {

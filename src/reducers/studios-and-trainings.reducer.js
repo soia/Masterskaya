@@ -1,3 +1,5 @@
+import { contentConstants } from '../constants';
+
 const updatepagesList = (state, action) => {
 
     if (state === undefined) {
@@ -9,21 +11,21 @@ const updatepagesList = (state, action) => {
     }
 
     switch (action.type) {
-        case 'FETCH_CONTENT_REQUEST':
+        case contentConstants.REQUEST:
             return {
                 dataItem: [],
                 loading: true,
                 error: null
             };
 
-        case 'FETCH_CONTENT_SUCCESS':
+        case contentConstants.SUCCESS:
             return {
                 dataItem: action.payload,
                 loading: false,
                 error: null
             };
 
-        case 'FETCH_CONTENT_FAILURE':
+        case contentConstants.FAILURE:
             return {
                 dataItem: [],
                 loading: false,
