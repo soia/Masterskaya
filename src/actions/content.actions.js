@@ -1,19 +1,23 @@
+import { contentConstants } from '../constants';
+
+
+
 const contentLoaded = (newStudios) => {
     return {
-        type: 'FETCH_CONTENT_SUCCESS',
+        type: contentConstants.SUCCESS,
         payload: newStudios
     };
 };
 
 const contentRequested = () => {
     return {
-        type: 'FETCH_CONTENT_REQUEST'
+        type: contentConstants.REQUEST
     };
 };
 
 const contentError = ( error ) => {
     return {
-        type: 'FETCH_CONTENT_FAILURE',
+        type: contentConstants.FAILURE,
         payload: error
     };
 };

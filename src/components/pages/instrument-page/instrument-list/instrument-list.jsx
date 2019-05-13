@@ -47,8 +47,13 @@ class InstrumentListContainer extends Component {
         return <InstrumentList dataItem={dataItem} />;
     }
 }
-const mapStateToProps = ({ pagesList: { dataItem, loading, error }}) => {
-    return { dataItem, loading, error };
+
+const mapStateToProps = (state) => {
+    const { dataItem, loading, error } = state.updatepagesList;
+
+    return {
+        dataItem, loading, error 
+    };
 };
 
 const mapDispatchToProps = (dispatch, { storeService }) => {

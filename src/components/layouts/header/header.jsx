@@ -44,6 +44,8 @@ export class Header extends Component {
         height: "100vh"
     }
 
+    console.log(loginBlock);
+
     return (
         <header className={style.header}>
 
@@ -124,8 +126,12 @@ export class Header extends Component {
   }
 }
 
-const mapStateToProps = ({ authentication: { loggingIn }}) => {
-    return { loggingIn };
+const mapStateToProps = (state) => {
+    const { loggingIn } = state.authentication;
+
+    return {
+        loggingIn 
+    };
 };
 
 export default compose(

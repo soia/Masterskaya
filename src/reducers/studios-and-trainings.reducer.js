@@ -1,6 +1,7 @@
 import { contentConstants } from '../constants';
 
-const updatepagesList = (state, action) => {
+
+export function updatepagesList(state, action) {
 
     if (state === undefined) {
         return {
@@ -33,8 +34,6 @@ const updatepagesList = (state, action) => {
             };
 
         default:
-            return state.pagesList;
+            return state;
     }
 }
-
-export default updatepagesList;

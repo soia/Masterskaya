@@ -49,6 +49,7 @@ class Registration extends Component {
                 [name]: value
             }
         });
+
     };
 
     onSubmit = (event) => {
@@ -183,8 +184,11 @@ class Registration extends Component {
     }
 }
 
-const mapStateToProps = ({ alert: { message, error }}) => {
-    return { message, error };
+const mapStateToProps = (state) => {
+    const { registering } = state.registration;
+    return { 
+        registering
+    };
 };
 
 export default compose(

@@ -35,6 +35,9 @@
     "enter": {
         "name": "Войти"
     },
+    "logout": {
+        "title": "Выйти"
+    },
     "registration": {
         "registration": "Регистрация"
     },

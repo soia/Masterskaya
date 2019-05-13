@@ -111,8 +111,12 @@ class Login extends Component {
     }
 }
 
-const mapStateToProps = ({ authentication: { loggingIn }}) => {
-    return { loggingIn };
+const mapStateToProps = (state) => {
+    const { loggingIn } = state.authentication;
+
+    return {
+        loggingIn 
+    };
 };
 
 export default compose(

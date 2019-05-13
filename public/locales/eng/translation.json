@@ -32,6 +32,9 @@
     "login": {
         "title": "Log in"
     },
+    "logout": {
+        "title": "Log out"
+    },
     "enter": {
         "name": "Enter"
     },
