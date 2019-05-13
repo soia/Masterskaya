@@ -5,7 +5,7 @@ import Spinner from "../../../spinner";
 import ErrorIndicator from '../../error-page/error-indicator';
 
 import { withStoreService } from "../../../hoc";
-import { fetchStudios } from "../../../../actions";
+import { fetchStudios } from "../../../../actions/content.actions";
 import { compose } from "../../../../utils";
 
 import style from "./studios-list.module.scss";

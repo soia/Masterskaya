@@ -1,7 +1,10 @@
 import React, { Component } from 'react';
+import { connect } from 'react-redux';
 import { withTranslation } from 'react-i18next';
-import Field from '../../small-components/field';
 import { message } from 'antd';
+import { compose } from "../../../utils";
+import { userActions } from '../../../actions';
+import Field from '../../small-components/field';
 
 import style from './registration.module.scss';
 import "./antDesign.css";
@@ -10,77 +13,114 @@ import 'antd/dist/antd.css';
 class Registration extends Component {
 
     state = {
-        username: "",
-        password: "",
-        repeatPassword: "",
-        email: "",
+        user: {
+            username: "",
+            password: "",
+            repeatPassword: "",
+            email: ""
+        },
 
         errors: {
             username: false,
             password: false,
             repeatPassword: false,
-            email: false
+            email: false,
+            error: false
         }
     };
     
+    // componentDidUpdate() {
+    //     const { error } = this.props;
+    //     const { errors } = this.state;
+
+    //     if (error) {
+    //         errors.error = true;
+    //         console.log('ComponentDidUpdate', this.state.errors.error);
+    //     }
+    // }
+    
     onChange = event => {
+        const { name, value } = event.target;
+        const { user } = this.state;
+
         this.setState({
-            [event.target.name]: event.target.value
+            user: {
+                ...user,
+                [name]: value
+            }
         });
     };
 
     onSubmit = (event) => {
-        const { t } = this.props;
         event.preventDefault();
+
+        const { t, dispatch } = this.props;
+        const { username, password, repeatPassword, email } = this.state.user;
+        const { user } = this.state;
         const errors = {};
-        if (this.state.username.length < 4) {
+        
+        if (username.length < 4) {
             errors.username = t('input.error', { count: 4});
         }
 
-        if (this.state.password.length < 6) {
+        if (password.length < 6) {
             errors.password = t('input.error', { count: '6'});
         }
 
-        if (this.state.password !== this.state.repeatPassword) {
+        if (password !== repeatPassword) {
             errors.repeatPassword = t('repeatPassword.error');
         }
 
-        if (!!this.state.email === false || this.state.email.match(/^([\w.%+-]+)@([\w-]+\.)+([\w]{2,})$/i) === null) {
+        if (!!email === false || email.match(/^([\w.%+-]+)@([\w-]+\.)+([\w]{2,})$/i) === null) {
             errors.email = t('email.error');
         }
+
+        // if(this.state.errors.error) {
+        //     message.error(t('antMessage.SuccessRegistr'), 2);
+        //     errors.error = true;
+        //     console.log('sdfdsfd', this.state.errors.error);
+        // }
 
         if (Object.keys(errors).length > 0) {
             this.setState({
                 errors: errors
             });
-        } else {
+        }
+
+        else {
             this.setState({
-                errors: {}
+                errors: {},
             });
-            console.log("Registration Submit Success");
+
             message.success(t('antMessage.SuccessRegistr'), 2);
             setTimeout(() => { 
                 this.props.changeLoginRegistr();
             }, 2000);
+
+            if (user.username && user.password && user.repeatPassword && user.email) {
+                dispatch(userActions.register(user));
+            }
         }
     };
+    
 
     render() {
         const { t } = this.props;
-
+        const { username, password, repeatPassword, email } = this.state.user;
+        
         return (
             <div className="login">
                 <h2
                     className={style.login__title}>
                     {t("registration.registration")}
                 </h2>
-                <form>
+                <form onSubmit={this.onSubmit}>
                     <Field
                         id="username"
                         type="text"
                         placeholder={t("username.title")}
                         name="username"
-                        value={this.state.username}
+                        value={username}
                         onChange={this.onChange}
                         error={this.state.errors.username}
                         inputStyle={style.login__input}
@@ -91,7 +131,7 @@ class Registration extends Component {
                         type="email"
                         placeholder={t("email.title")}
                         name="email"
-                        value={this.state.email}
+                        value={email}
                         onChange={this.onChange}
                         error={this.state.errors.email}
                         inputStyle={style.login__input}
@@ -102,7 +142,7 @@ class Registration extends Component {
                         type="password"
                         placeholder={t("password.title")}
                         name="password"
-                        value={this.state.password}
+                        value={password}
                         onChange={this.onChange}
                         error={this.state.errors.password}
                         inputStyle={style.login__input}
@@ -113,7 +153,7 @@ class Registration extends Component {
                         type="password"
                         placeholder={t("repeatPassword.title")}
                         name="repeatPassword"
-                        value={this.state.repeatPassword}
+                        value={repeatPassword}
                         onChange={this.onChange}
                         error={this.state.errors.repeatPassword}
                         inputStyle={style.login__input}
@@ -122,7 +162,6 @@ class Registration extends Component {
                     <div className={style.login__buttons}>
 
                         <button
-                            onClick={this.onSubmit}
                             className={style.login__buttons_submit}
                             type="submit"
                         >
@@ -144,4 +183,13 @@ class Registration extends Component {
     }
 }
 
-export default withTranslation()(Registration);
+const mapStateToProps = ({ alert: { message, error }}) => {
+    return { message, error };
+};
+
+export default compose(
+    withTranslation(),
+    connect(
+        mapStateToProps,
+    )
+)(Registration);

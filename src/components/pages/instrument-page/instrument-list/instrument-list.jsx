@@ -5,7 +5,7 @@ import Spinner from "../../../spinner";
 import ErrorIndicator from '../../error-page/error-indicator';
 
 import { withStoreService } from "../../../hoc";
-import { fetchSynthesizer } from "../../../../actions";
+import { fetchSynthesizer } from "../../../../actions/content.actions";
 import { compose } from "../../../../utils";
 
 import style from "./instrument-list.module.scss";

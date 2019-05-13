@@ -7,10 +7,14 @@ import ErrorBoundry from './components/pages/error-page/error-boundry';
 import DummyServices from './services/dummy-service';
 import Spinner from './components/spinner';
 import { StoreServiceProvider } from './components/store-service-context';
-
-import store from './store';
+import store from './_helpers/store';
 import './i18n';
+
 import './components/app/app.module.scss';
+
+// setup fake backend
+import { configureFakeBackend } from './_helpers';
+configureFakeBackend();
 
 const DummyService = new DummyServices();
 

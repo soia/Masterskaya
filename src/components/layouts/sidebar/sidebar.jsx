@@ -1,6 +1,8 @@
 import React, { Component, Fragment } from 'react'
+import { connect } from 'react-redux';
 import { Drawer } from 'antd';
 import ButtonClose from '../../small-components/button-close';
+import { compose } from "../../../utils";
 
 import './sidebar.css';
 
@@ -12,15 +14,23 @@ class Sidebar extends Component {
 
     showDrawer = () => {
         this.setState({
-            visible: true,
+            visible: !this.state.visible
         });
     };
 
     onClose = () => {
         this.setState({
-            visible: false,
+            visible: !this.state.visible
         });
     };
+
+    componentDidUpdate() {
+        const { loggingIn } = this.props;
+
+        if (loggingIn) {
+            this.state.visible = false;
+        }
+    }
 
     render() {
         return (
@@ -50,4 +60,12 @@ class Sidebar extends Component {
     }
 }
 
-export default Sidebar;
+const mapStateToProps = ({ authentication: { loggingIn }}) => {
+    return { loggingIn };
+};
+
+export default compose(
+    connect(
+        mapStateToProps,
+    )
+)(Sidebar);

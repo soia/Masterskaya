@@ -1,6 +1,10 @@
 import React, { Component } from 'react';
+import { connect } from 'react-redux';
 import { withTranslation } from 'react-i18next';
 import Field from '../../small-components/field';
+import { userActions } from '../../../actions';
+import { compose } from "../../../utils";
+
 import style from './login.module.scss';
 
 class Login extends Component {
@@ -21,9 +25,12 @@ class Login extends Component {
     };
 
     onSubmit = (event) => {
-        const { t } = this.props;
         event.preventDefault();
+
+        const { t, dispatch } = this.props;
+        const { username, password } = this.state;
         const errors = {};
+
         if (this.state.username.length < 4) {
             errors.username = t('input.error', { count: 4});
         }
@@ -40,7 +47,10 @@ class Login extends Component {
             this.setState({
                 errors: {}
             });
-            console.log("Login Submit Success");
+
+            if (username && password) {
+                dispatch(userActions.login(username, password));
+            }
         }
     };
 
@@ -101,4 +111,13 @@ class Login extends Component {
     }
 }
 
-export default withTranslation()(Login);
+const mapStateToProps = ({ authentication: { loggingIn }}) => {
+    return { loggingIn };
+};
+
+export default compose(
+    withTranslation(),
+    connect(
+        mapStateToProps,
+    )
+)(Login);

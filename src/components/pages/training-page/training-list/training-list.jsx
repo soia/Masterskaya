@@ -5,7 +5,7 @@ import Spinner from "../../../spinner";
 import ErrorIndicator from '../../error-page/error-indicator';
 
 import { withStoreService } from "../../../hoc";
-import { fetchTraining } from "../../../../actions";
+import { fetchTraining } from "../../../../actions/content.actions";
 import { compose } from "../../../../utils";
 
 import style from "./training-list.module.scss";
