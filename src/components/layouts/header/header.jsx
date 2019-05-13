@@ -1,10 +1,13 @@
 import React, { Component } from 'react'
 import { Link, NavLink  } from "react-router-dom";
 import { withTranslation } from "react-i18next";
+import { connect } from 'react-redux';
 import Sidebar from '../sidebar';
 import Login from '../../auth/login';
 import Registration from '../../auth/registration';
 import SelectLangeage from '../../language';
+import { compose } from "../../../utils";
+import UserLoggedIn from '../../small-components/user-loggedIn-info';
 
 import logo from "./images/logo.png";
 import search from "./images/search.svg";
@@ -32,7 +35,7 @@ export class Header extends Component {
 
   render() {
 
-    const { t } = this.props;
+    const { t, loggingIn } = this.props; 
 
     const loginBlock = this.state.loginBlock;
 
@@ -99,20 +102,35 @@ export class Header extends Component {
 
             <SelectLangeage />
 
-            <Sidebar
-                buttonName={t("header.login")}
-                titleStyles={style.header__loginBtn}
-                closeStyles={style.sideBar__close}
-                bodyStyle={sidebarBack}
-                img={closeImg}
-            >
+            { loggingIn ? 
 
-            {loginBlock ? <Login changeLoginRegistr={this.setLoginRegistr} /> : <Registration changeLoginRegistr={this.setLoginRegistr} />}
-                
-            </Sidebar>
+                <Sidebar
+                    buttonName={t("header.login")}
+                    titleStyles={style.header__loginBtn}
+                    closeStyles={style.sideBar__close}
+                    bodyStyle={sidebarBack}
+                    img={closeImg}
+                >
+
+                    {loginBlock ? <Login changeLoginRegistr={this.setLoginRegistr} /> : <Registration changeLoginRegistr={this.setLoginRegistr} />}
+                    
+                </Sidebar>
+                : <UserLoggedIn />
+            }
+
+
         </header>
     )
   }
 }
 
-export default withTranslation()(Header);;
+const mapStateToProps = ({ authentication: { loggingIn }}) => {
+    return { loggingIn };
+};
+
+export default compose(
+    withTranslation(),
+    connect(
+        mapStateToProps,
+    )
+)(Header);
