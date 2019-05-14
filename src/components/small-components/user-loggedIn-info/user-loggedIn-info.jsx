@@ -13,7 +13,7 @@ export class UserLoggedIn extends Component {
 
         return (
             <div className={style.userLoggedIn}>
-                { user.username }
+                { user ? user.username : '' }
                 <DropDown />
             </div>
         )
@@ -24,7 +24,7 @@ const mapStateToProps = (state) => {
     const { user } = state.authentication;
 
     return { 
-        user
+      user: user
     };
 };
 

@@ -24,20 +24,9 @@ class Registration extends Component {
             username: false,
             password: false,
             repeatPassword: false,
-            email: false,
-            error: false
+            email: false
         }
     };
-    
-    // componentDidUpdate() {
-    //     const { error } = this.props;
-    //     const { errors } = this.state;
-
-    //     if (error) {
-    //         errors.error = true;
-    //         console.log('ComponentDidUpdate', this.state.errors.error);
-    //     }
-    // }
     
     onChange = event => {
         const { name, value } = event.target;
@@ -49,7 +38,6 @@ class Registration extends Component {
                 [name]: value
             }
         });
-
     };
 
     onSubmit = (event) => {
@@ -76,12 +64,6 @@ class Registration extends Component {
             errors.email = t('email.error');
         }
 
-        // if(this.state.errors.error) {
-        //     message.error(t('antMessage.SuccessRegistr'), 2);
-        //     errors.error = true;
-        //     console.log('sdfdsfd', this.state.errors.error);
-        // }
-
         if (Object.keys(errors).length > 0) {
             this.setState({
                 errors: errors
@@ -103,7 +85,6 @@ class Registration extends Component {
             }
         }
     };
-    
 
     render() {
         const { t } = this.props;
@@ -185,9 +166,10 @@ class Registration extends Component {
 }
 
 const mapStateToProps = (state) => {
-    const { registering } = state.registration;
+    const { error, message } = state.alert;
     return { 
-        registering
+        error: error,
+        errorMessage: message
     };
 };
 

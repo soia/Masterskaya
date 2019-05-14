@@ -35,7 +35,7 @@ export class Header extends Component {
 
   render() {
 
-    const { t, loggingIn } = this.props; 
+    const { t, userStatus } = this.props; 
 
     const loginBlock = this.state.loginBlock;
 
@@ -43,8 +43,6 @@ export class Header extends Component {
         backgroundColor: "#232323",
         height: "100vh"
     }
-
-    console.log(loginBlock);
 
     return (
         <header className={style.header}>
@@ -104,8 +102,9 @@ export class Header extends Component {
 
             <SelectLangeage />
 
-            { loggingIn ? 
-
+            { userStatus ? 
+                <UserLoggedIn />
+                :
                 <Sidebar
                     buttonName={t("header.login")}
                     titleStyles={style.header__loginBtn}
@@ -117,9 +116,7 @@ export class Header extends Component {
                     {loginBlock ? <Login changeLoginRegistr={this.setLoginRegistr} /> : <Registration changeLoginRegistr={this.setLoginRegistr} />}
                     
                 </Sidebar>
-                : <UserLoggedIn />
             }
-
 
         </header>
     )
@@ -127,10 +124,9 @@ export class Header extends Component {
 }
 
 const mapStateToProps = (state) => {
-    const { loggingIn } = state.authentication;
-
-    return {
-        loggingIn 
+    const { loggedIn } = state.authentication;
+    return { 
+        userStatus: loggedIn
     };
 };
 

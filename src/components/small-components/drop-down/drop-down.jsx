@@ -1,20 +1,28 @@
 import React, { Component, Fragment } from 'react';
 import { Menu, Dropdown, Icon } from 'antd';
-import { Trans  } from "react-i18next";
+import { withTranslation } from "react-i18next";
+import { userActions } from '../../../actions/user.actions';
+import { connect } from 'react-redux';
+import { compose } from "../../../utils";
 
 // import style from "./drop-down.scss";
 
-const menu = (
-    <Menu>
-        <Menu.Item key="0">
-            <Trans i18nKey="logout.title" />
-        </Menu.Item>
-    </Menu>
-);
-
 class DropDown extends Component {
 
+    logOut = () => {
+        const { dispatch } = this.props;
+        dispatch(userActions.logout());
+    }
+
     render() {
+        const { t } = this.props;
+        const menu = (
+            <Menu>
+                <Menu.Item onClick={this.logOut} key="0">
+                    {t("logout.title")}
+                </Menu.Item>
+            </Menu>
+        );
 
         return (
             <Fragment>
@@ -32,4 +40,17 @@ class DropDown extends Component {
     }
 }
 
-export default DropDown;
+const mapStateToProps = (state) => {
+    const { loggingIn } = state.authentication;
+
+    return {
+        userStatus: loggingIn 
+    };
+};
+
+export default compose(
+    withTranslation(),
+    connect(
+        mapStateToProps,
+    )
+)(DropDown);
