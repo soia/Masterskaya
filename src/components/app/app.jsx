@@ -6,7 +6,8 @@ import {
     Instrument,
     Training,
     PageNotFound,
-    Contacts
+    Contacts,
+    Profile
 } from "../../components/pages";
 
 import Header from "../layouts/header";
@@ -46,6 +47,11 @@ const App = () => {
                     <Route 
                         path="/contacts"
                         component={ Contacts } 
+                    />
+
+                    <Route 
+                        path="/profile"
+                        component={ Profile } 
                     />
 
                     <Route 

@@ -43,7 +43,7 @@ class Registration extends Component {
     onSubmit = (event) => {
         event.preventDefault();
 
-        const { t, dispatch, errorMessage, error } = this.props;
+        const { t, dispatch } = this.props;
         const { username, password, repeatPassword, email } = this.state.user;
         const { user } = this.state;
         const errors = {};
@@ -86,7 +86,7 @@ class Registration extends Component {
                     message.success(t('antMessage.SuccessRegistr'), 2);
                     this.props.changeLoginRegistr();
                 }
-            }, 500);
+            }, 1000);
         }
     };
 

@@ -1,10 +1,11 @@
 import React, { Component } from "react";
 import { connect } from 'react-redux';
+import { NavLink } from "react-router-dom";
 import { withTranslation } from "react-i18next";
 import { compose } from "../../../utils";
 import DropDown from '../../small-components/drop-down';
 
-import style from "./user-loggedIn-info";
+import "./user-loggedIn-info.css";
 
 export class UserLoggedIn extends Component {
 
@@ -12,8 +13,14 @@ export class UserLoggedIn extends Component {
         const { user } = this.props;
 
         return (
-            <div className={style.userLoggedIn}>
-                { user ? user.username : '' }
+            <div className="userNameWrapper">
+                <NavLink
+                    to="/profile"
+                    activeStyle={{ color: "#ff0034"}}
+                >
+                    { user ? user.username : '' }
+                </NavLink>
+                
                 <DropDown />
             </div>
         )

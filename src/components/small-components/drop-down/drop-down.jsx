@@ -5,7 +5,7 @@ import { userActions } from '../../../actions/user.actions';
 import { connect } from 'react-redux';
 import { compose } from "../../../utils";
 
-// import style from "./drop-down.scss";
+import "./drop-down.css";
 
 class DropDown extends Component {
 
@@ -17,16 +17,20 @@ class DropDown extends Component {
     render() {
         const { t } = this.props;
         const menu = (
-            <Menu>
-                <Menu.Item onClick={this.logOut} key="0">
-                    {t("logout.title")}
-                </Menu.Item>
-            </Menu>
+
+            <div >
+                <Menu>
+                    <Menu.Item onClick={this.logOut} key="0">
+                        {t("logout.title")}
+                    </Menu.Item>
+                </Menu>
+            </div>
         );
 
         return (
             <Fragment>
                 <Dropdown
+                    className="dropdownArrow"
                     overlay={menu}
                     placement="bottomCenter"
                     trigger={['click']}

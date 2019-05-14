@@ -4,6 +4,7 @@ import Instrument from './instrument-page';
 import Training from './training-page';
 import PageNotFound from './page-not-found';
 import Contacts from './contacts-page';
+import Profile from './profile-page';
 
 export {
   HomePage,
@@ -11,5 +12,6 @@ export {
   Instrument,
   Training,
   PageNotFound,
-  Contacts
+  Contacts,
+  Profile
 };

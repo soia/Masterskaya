@@ -59,7 +59,7 @@ class Login extends Component {
                 } else {
                     message.success(t('antMessage.SuccessLogin'), 2);
                 }
-            }, 500);
+            }, 1000);
         }
     };
 

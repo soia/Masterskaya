@@ -1,0 +1,17 @@
+.userNameWrapper {
+    color: #000000;
+    font-family: "FuturaPT-Medium", Arial, Helvetica, sans-serif;
+    font-size: 1.1vw;
+    font-weight: 500;
+    display: flex;
+    align-items: center;
+}
+
+.userNameWrapper a {
+    color: #000000;
+}
+
+.userName .dropdown-open {
+    transform: rotate(180deg);
+    transition: all 0.25s;
+}
