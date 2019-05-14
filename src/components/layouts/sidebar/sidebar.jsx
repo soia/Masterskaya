@@ -19,13 +19,12 @@ class Sidebar extends Component {
     };
 
     componentDidUpdate() {
-        const { loggingIn } = this.props;
+        const { loggedIn } = this.props;
 
-        if (loggingIn) {
+        if (loggedIn) {
             // eslint-disable-next-line 
             this.state.visible = false;
         }
-
     }
 
     render() {
@@ -56,8 +55,11 @@ class Sidebar extends Component {
     }
 }
 
-const mapStateToProps = ({ authentication: { loggingIn }}) => {
-    return { loggingIn };
+const mapStateToProps = (state) => {
+    const { loggedIn } = state.authentication;
+    return { 
+        loggedIn: loggedIn
+    };
 };
 
 export default compose(

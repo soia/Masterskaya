@@ -43,7 +43,7 @@ class Registration extends Component {
     onSubmit = (event) => {
         event.preventDefault();
 
-        const { t, dispatch } = this.props;
+        const { t, dispatch, errorMessage, error } = this.props;
         const { username, password, repeatPassword, email } = this.state.user;
         const { user } = this.state;
         const errors = {};
@@ -75,15 +75,19 @@ class Registration extends Component {
                 errors: {},
             });
 
-            message.success(t('antMessage.SuccessRegistr'), 2);
-            setTimeout(() => { 
-                this.props.changeLoginRegistr();
-            }, 2000);
-
             if (user.username && user.password && user.repeatPassword && user.email) {
                 dispatch(userActions.register(user));
             }
         }
+
+        setTimeout(() => {
+            if (error) {
+                message.error(errorMessage, 2);
+            } else {
+                message.success(t('antMessage.SuccessRegistr'), 2);
+                this.props.changeLoginRegistr();
+            }
+        }, 500);
     };
 
     render() {

@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { withTranslation } from 'react-i18next';
 import Field from '../../small-components/field';
+import { message } from 'antd';
 import { userActions } from '../../../actions';
 import { compose } from "../../../utils";
 
@@ -51,6 +52,14 @@ class Login extends Component {
             if (username && password) {
                 dispatch(userActions.login(username, password));
             }
+
+            setTimeout(() => {
+                if (this.props.error) {
+                    message.error(this.props.errorMessage, 2);
+                } else {
+                    message.success(t('antMessage.SuccessLogin'), 2);
+                }
+            }, 500);
         }
     };
 
@@ -112,10 +121,10 @@ class Login extends Component {
 }
 
 const mapStateToProps = (state) => {
-    const { loggingIn } = state.authentication;
-
-    return {
-        loggingIn 
+    const { error, message } = state.alert;
+    return { 
+        error: error,
+        errorMessage: message
     };
 };
 

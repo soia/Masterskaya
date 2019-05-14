@@ -86,6 +86,7 @@
         "description": "From all over the world, instruments — synthesizers, drum sets, and pianos — are brought here. Compose music on them every fall can each musician. All you need is nothing: originality and directness. Any genre: from jazz to hip-hop."
     },
     "antMessage": {
-        "SuccessRegistr": "Successful registration!"
+        "SuccessRegistr": "Successful registration!",
+        "SuccessLogin": "Successful Log In!"
     }
 }

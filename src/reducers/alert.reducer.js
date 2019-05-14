@@ -5,7 +5,8 @@ export function alert(state = {}, action) {
         case alertConstants.SUCCESS:
             return {
                 type: 'alert-success',
-                message: action.message
+                message: action.message,
+                error: false
             };
         case alertConstants.ERROR:
             return {

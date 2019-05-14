@@ -1,8 +1,9 @@
 .ant-message {
     display: flex;
-    justify-content: flex-end;
+    justify-content: center;
     top: 7.5vw !important;
-    left: -7.1vw !important;
+    left: 75vw !important;
+    max-width: 25vw;
 }
 
 .ant-message * {
