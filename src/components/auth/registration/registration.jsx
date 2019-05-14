@@ -72,22 +72,22 @@ class Registration extends Component {
 
         else {
             this.setState({
-                errors: {},
+                errors: {}
             });
 
             if (user.username && user.password && user.repeatPassword && user.email) {
                 dispatch(userActions.register(user));
             }
+            
+            setTimeout(() => {
+                if (this.props.error) {
+                    message.error(this.props.errorMessage, 2);
+                } else {
+                    message.success(t('antMessage.SuccessRegistr'), 2);
+                    this.props.changeLoginRegistr();
+                }
+            }, 500);
         }
-
-        setTimeout(() => {
-            if (error) {
-                message.error(errorMessage, 2);
-            } else {
-                message.success(t('antMessage.SuccessRegistr'), 2);
-                this.props.changeLoginRegistr();
-            }
-        }, 500);
     };
 
     render() {
