@@ -15,7 +15,14 @@ export default class DummyService {
             description: 'Lorem ipsum dolor sit amet, consectetur orem ipsum dolor sit amet, consectetur orem ipsum dolor sit amet, consectetur orem ipsum dolor sit amet, consectetur orem ipsum dolor sit amet, consectetur Lorem ipsum dolor sit amet.Lorem ipsum dolor sit amet, consectetur orem ipsum dolor sit amet, consectetur orem ipsum dolor sit amet, consectetur orem ipsum dolor sit amet, consectetur orem ipsum dolor sit amet, consectetur Lorem ipsum dolor sit amet.',
             img: 'https://i.ibb.co/86H7CMg/Interior-recording-studio-035447.png',
             cost: '700'
-        }
+        },
+        {
+            id: 3,
+            number: '3',
+            description: 'Lorem ipsum dolor sit amet, consectetur orem ipsum dolor sit amet, consectetur orem ipsum dolor sit amet, consectetur orem ipsum dolor sit amet, consectetur orem ipsum dolor sit amet, consectetur Lorem ipsum dolor sit amet.Lorem ipsum dolor sit amet, consectetur orem ipsum dolor sit amet, consectetur orem ipsum dolor sit amet, consectetur orem ipsum dolor sit amet, consectetur orem ipsum dolor sit amet, consectetur Lorem ipsum dolor sit amet.',
+            img: 'https://i.ibb.co/0FNW07f/G20-0047.png',
+            cost: '500'
+        },
     ];
 
     training = [

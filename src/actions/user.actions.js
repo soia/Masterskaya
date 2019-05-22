@@ -18,6 +18,7 @@ function login(username, password) {
             .then(
                 user => { 
                     dispatch(success(user));
+                    dispatch(alertActions.success('Authorization successful'));
                 },
                 error => {
                     dispatch(failure(error.toString()));

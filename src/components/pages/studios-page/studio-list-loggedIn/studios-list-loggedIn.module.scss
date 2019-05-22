@@ -1,0 +1,15 @@
+@import "../../../assets/styles/variables";
+
+.listWrapper {
+    width: 26vw;
+    height: calc(100vh - 15.8vw);
+    background-color: #f9f9f9;
+    padding: 2.4vw 2.4vw 2.4vw 6.1vw;
+
+    &__item {
+        font-family: $CoreSansG;
+        color: $greyLight;
+        font-size: 23px;
+        padding-bottom: 2vw;
+    }
+}

@@ -5,6 +5,7 @@ import Field from '../../small-components/field';
 import { message } from 'antd';
 import { userActions } from '../../../actions';
 import { compose } from "../../../utils";
+import store from "../../../helpers/store";
 
 import style from './login.module.scss';
 
@@ -54,10 +55,12 @@ class Login extends Component {
             }
 
             setTimeout(() => {
-                if (this.props.error) {
-                    message.error(this.props.errorMessage, 2);
+                const { authentication : { loggedIn } } = store.getState();
+                
+                if (loggedIn) {
+                    message.success(t('antMessage.SuccessLogin'), 1);
                 } else {
-                    message.success(t('antMessage.SuccessLogin'), 2);
+                    message.error(t('antMessage.ErrorLogin'), 1);
                 }
             }, 1000);
         }
@@ -120,14 +123,16 @@ class Login extends Component {
     }
 }
 
-const mapStateToProps = (state) => {
-    const { error, message } = state.alert;
-    return { 
-        error: error,
-        errorMessage: message
-    };
-};
 
+
+const mapStateToProps = state => {
+  const { loggedIn } = state.authentication;
+
+  return {
+    loggedIn: loggedIn
+  };
+};
+  
 export default compose(
     withTranslation(),
     connect(

@@ -1,29 +1,52 @@
-import React, { Fragment } from "react";
-import { useTranslation } from "react-i18next";
+import React, { Fragment, Component } from "react";
+import { withTranslation } from "react-i18next";
+import { connect } from "react-redux";
+import { compose } from "../../../utils";
 import ButtonBook from '../../small-components/button-book';
 import StudiosList from './studios-list';
+import StudioListLoggedIn from './studio-list-loggedIn';
 import MainBlock from '../../layouts/main-top-block';
 
 import style from "./studios-page.module.scss";
 
-const Studios = () => {
-    const { t } = useTranslation();
+    class Studios extends Component {
 
-    return (
-        <Fragment>
-            <MainBlock
-                title={t("studios.title")}
-                description={t("studios.description")}
-                titleStyle={style.title}
-            >
-                <ButtonBook
-                    bookStyles={style.bookBtnRed}
-                    title={t("booked.title")}
-                />
-            </MainBlock>
-            <StudiosList />
-        </Fragment>
-    );
+        render() {
+        const { t, loggedIn } = this.props;
+
+        if (loggedIn) {
+            return <StudioListLoggedIn />;
+        }
+
+        return (
+            <Fragment>
+                <MainBlock
+                    title={t("studios.title")}
+                    description={t("studios.description")}
+                    titleStyle={style.title}
+                >
+                    <ButtonBook
+                        bookStyles={style.bookBtnRed}
+                        title={t("booked.title")}
+                    />
+                </MainBlock>
+                <StudiosList />
+            </Fragment>
+        );
+    }
 };
 
-export default Studios;
+const mapStateToProps = state => {
+    const { loggedIn } = state.authentication;
+  
+    return {
+        loggedIn: loggedIn
+    };
+};
+  
+export default compose(
+    withTranslation(),
+        connect(
+        mapStateToProps,
+    )
+)(Studios);

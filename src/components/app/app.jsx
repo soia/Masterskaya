@@ -30,7 +30,7 @@ const App = () => {
                     />
 
                     <Route
-                        path="/studios"
+                        path="/studios/:id?"
                         component={ Studios }
                     />
 

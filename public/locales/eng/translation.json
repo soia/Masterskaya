@@ -87,6 +87,7 @@
     },
     "antMessage": {
         "SuccessRegistr": "Successful registration!",
-        "SuccessLogin": "Successful Log In!"
+        "SuccessLogin": "Successful Log In!",
+        "ErrorLogin": "Username or password is incorrect!"
     }
 }

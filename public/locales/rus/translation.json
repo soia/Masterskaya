@@ -87,6 +87,7 @@
     },
     "antMessage": {
         "SuccessRegistr": "Успешная регистрация!",
-        "SuccessLogin": "Успешная авторизация!"
+        "SuccessLogin": "Успешная авторизация!",
+        "ErrorLogin": "Логин или пароль неверны!"
     }
 }
