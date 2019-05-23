@@ -81,6 +81,14 @@ export class Header extends Component {
                             {t("header.training")}
                         </NavLink>
                     </li>
+                    <li>
+                        <NavLink
+                            to="/actions"
+                            activeStyle={{ color: "#ff0034"}}
+                        >
+                            {t("header.events")}
+                        </NavLink>
+                    </li>
                 </ul>
             </nav>
 
