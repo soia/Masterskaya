@@ -5,6 +5,7 @@ import Training from './training-page';
 import PageNotFound from './page-not-found';
 import Contacts from './contacts-page';
 import Profile from './profile-page';
+import EventsPage from './events-page';
 
 export {
   HomePage,
@@ -13,5 +14,6 @@ export {
   Training,
   PageNotFound,
   Contacts,
-  Profile
+  Profile,
+  EventsPage
 };

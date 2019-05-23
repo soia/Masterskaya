@@ -7,7 +7,8 @@ import {
     Training,
     PageNotFound,
     Contacts,
-    Profile
+    Profile,
+    EventsPage
 } from "../../components/pages";
 
 import Header from "../layouts/header";
@@ -53,7 +54,10 @@ const App = () => {
                         path="/profile"
                         component={ Profile } 
                     />
-
+                    <Route 
+                        path="/events"
+                        component={ EventsPage } 
+                    />
                     <Route 
                         component={ PageNotFound } 
                     />
